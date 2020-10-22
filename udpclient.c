@@ -38,9 +38,11 @@ int main( int argc, char* argv[])
         perror("Error: socket failed!");
         exit(1);
     }
-
+    printf("troublshooting 1");
     len = sendto(s, string, strlen(string), 0, (struct sockaddr*)&servAddr,sizeof(servAddr));
+    printf("troublshooting 2");
     recvfrom(s, buffer, len, 0, NULL, NULL);
+    printf("troublshooting 3");
     buffer[len]= '\0';
     printf(" Echo string recieved: %s", buffer);
     close(s);
