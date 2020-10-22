@@ -11,7 +11,7 @@
 #include <arpa/inet.h>
 #include <sys/wait.h>
 
-int main(void)
+int main( int argc, char* argv[])
 {
     int s;
     int len;
@@ -19,11 +19,18 @@ int main(void)
     struct sockaddr_in servAddr;
     struct sockaddr_in cliAddr;
     int cliAddrlen;
+    int servPort
     memset(&servAddr,0,sizeof(servAddr));
     servAddr.sin_family = AF_INET;
-    servAddr.sin_port = htons(SERVER_PORT);
+    servAddr.sin_port = htons(servPort);
     servAddr.sin_addr.s_addr = htonl(INADDR_ANY);
 
+    if(argc != 3)
+    {
+        printf("Error: three arguments are needed!");
+        exit(1);
+    }
+    servPort = atoi(argv[1]);
     if((s = socket(PF_INET,SOCK_DGRAM, 0))<0)
     {
         perror("Error: socket failed!");
