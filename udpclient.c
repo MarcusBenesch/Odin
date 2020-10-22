@@ -31,7 +31,7 @@ int main( int argc, char* argv[])
     string = argv[3];
     memset(&servAddr,0,sizeof(servAddr));
     servAddr.sin_family = AF_INET;
-    inet_pton(AF_INET, servName, &servAddr.sin_addr)
+    inet_pton(AF_INET, servName, &servAddr.sin_addr);
     servAddr.sin_port = htons(servPort);
     
 
