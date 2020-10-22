@@ -55,7 +55,7 @@ int main( int argc, char* argv[])
         strcat(returnedBuff, argv[2]);
         printf("buffer = %s\n ", returnedBuff);
         sendto(s, returnedBuff, strlen(returnedBuff) , 0, (struct sockaddr*)&cliAddr, sizeof(cliAddr));
-        memset(returnedBuff,0,strlen(returnedBuff));
+        memset(returnedBuff,0,strlen(returnedBuff)); 
     
     }
 }
