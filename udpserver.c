@@ -20,10 +20,7 @@ int main( int argc, char* argv[])
     struct sockaddr_in cliAddr;
     int cliAddrlen;
     int servPort;
-    memset(&servAddr,0,sizeof(servAddr));
-    servAddr.sin_family = AF_INET;
-    servAddr.sin_port = htons(servPort);
-    servAddr.sin_addr.s_addr = htonl(INADDR_ANY);
+    
 
     if(argc != 3)
     {
@@ -32,6 +29,13 @@ int main( int argc, char* argv[])
         exit(1);
     }
     servPort = atoi(argv[1]);
+    
+    memset(&servAddr,0,sizeof(servAddr));
+    servAddr.sin_family = AF_INET;
+    servAddr.sin_port = htons(servPort);
+    servAddr.sin_addr.s_addr = htonl(INADDR_ANY);
+
+
     if((s = socket(PF_INET,SOCK_DGRAM, 0))<0)
     {
         perror("Error: socket failed!");

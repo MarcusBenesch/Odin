@@ -31,8 +31,10 @@ int main( int argc, char* argv[])
     string = argv[3];
     memset(&servAddr,0,sizeof(servAddr));
     servAddr.sin_family = AF_INET;
+    inet_pton(AF_INET, servName, &servAddr.sin_addr)
     servAddr.sin_port = htons(servPort);
-    servAddr.sin_addr.s_addr = htonl(INADDR_ANY);
+    
+
     if((s = socket(PF_INET,SOCK_DGRAM, 0))<0)
     {
         perror("Error: socket failed!");
