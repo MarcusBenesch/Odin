@@ -29,7 +29,7 @@ int main( int argc, char* argv[])
         exit(1);
     }
     servPort = atoi(argv[1]);
-    
+
     memset(&servAddr,0,sizeof(servAddr));
     servAddr.sin_family = AF_INET;
     servAddr.sin_port = htons(servPort);
@@ -50,6 +50,7 @@ int main( int argc, char* argv[])
     {
         
         len = recvfrom(s, buffer, sizeof(buffer), 0, (struct sockaddr*)&cliAddr, &cliAddrlen);
+        printf("The buffer is %s \n", buffer);
         sendto(s, buffer, len, 0, (struct sockaddr*)&cliAddr, sizeof(cliAddr));
     
     }
