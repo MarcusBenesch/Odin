@@ -52,7 +52,7 @@ int main( int argc, char* argv[])
         
         len = recvfrom(s, buffer, sizeof(buffer), 0, (struct sockaddr*)&cliAddr, &cliAddrlen);
         strcpy(returnedBuff, buffer);
-        strcat(returnedBuff, agrv[2]);
+        strcat(returnedBuff, argv[2]);
         sendto(s, returnedBuff, len, 0, (struct sockaddr*)&cliAddr, sizeof(cliAddr));
     
     }
