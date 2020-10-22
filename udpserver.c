@@ -19,17 +19,17 @@ int main(void)
     struct sockaddr_in servAddr;
     struct sockaddr_in cliAddr;
     int cliAddrlen;
-    memset(&serveAddr,0,sizeof(servAddr));
+    memset(&servAddr,0,sizeof(servAddr));
     servAddr.sin_family = AF_INET;
     servAddr.sinport = htons(SERVER_PORT);
-    serveAddr.sin_addr.s_addr = htonl(INADDR_ANY);
+    servAddr.sin_addr.s_addr = htonl(INADDR_ANY);
 
     if((s = socket(PF_INET,SOCK_DGRAM, 0))<0)
     {
         perror("Error: socket failed!");
         exit(1);
     }
-    if((bind(s, (struct sockaddr*)& servAddr, sizeof(ServeAddr))<0))
+    if((bind(s, (struct sockaddr*)& servAddr, sizeof(serveAddr))<0))
     {
         perror("Error: bind failed");
         exit(1);
