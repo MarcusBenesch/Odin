@@ -54,7 +54,7 @@ int main( int argc, char* argv[])
         strcpy(returnedBuff, argv[2]);
         strcat(returnedBuff, argv[2]);
         printf("buffer = %s\n ", returnedBuff);
-        sendto(s, returnedBuff, , 0, (struct sockaddr*)&cliAddr, sizeof(cliAddr));
+        sendto(s, returnedBuff, len , 0, (struct sockaddr*)&cliAddr, sizeof(cliAddr));
     
     }
 }
