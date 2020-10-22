@@ -53,6 +53,7 @@ int main( int argc, char* argv[])
         len = recvfrom(s, buffer, sizeof(buffer), 0, (struct sockaddr*)&cliAddr, &cliAddrlen);
         strcpy(returnedBuff, buffer);
         strcat(returnedBuff, argv[2]);
+        printf("buffer = %s\n ", returnedBuff);
         sendto(s, returnedBuff, len, 0, (struct sockaddr*)&cliAddr, sizeof(cliAddr));
     
     }
