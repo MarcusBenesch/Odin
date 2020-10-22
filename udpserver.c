@@ -16,7 +16,7 @@ int main( int argc, char* argv[])
     int s;
     int len;
     char buffer[256];
-    char returnedBuff[512];
+    char returnedBuff[256];
     struct sockaddr_in servAddr;
     struct sockaddr_in cliAddr;
     int cliAddrlen;
@@ -50,7 +50,10 @@ int main( int argc, char* argv[])
     while(1)
     {
         len = recvfrom(s, buffer, sizeof(buffer), 0, (struct sockaddr*)&cliAddr, &cliAddrlen);
-        memset(returnedBuff,'\0',256); 
+        for(int x = 0; x < 256; x ++)
+        {
+            returnedBuff[x] = '\0';
+        }
         printf("buffer before = %s\n ", returnedBuff);
         strcpy(returnedBuff, buffer);
         strcat(returnedBuff, argv[2]);
