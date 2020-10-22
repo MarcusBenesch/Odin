@@ -55,6 +55,7 @@ int main( int argc, char* argv[])
             returnedBuff[x] = '\0';
         }
         printf("buffer before = %s\n ", returnedBuff);
+        printf("String recieved = %s\n", buffer);
         strcpy(returnedBuff, buffer);
         strcat(returnedBuff, argv[2]);
         printf("buffer = %s\n ", returnedBuff);
