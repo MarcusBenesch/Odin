@@ -29,10 +29,10 @@ int main( int argc, char* argv[])
     servName = argv[0];
     servPort = atoi(argv[1]);
     string = argv[2];
-    memset(&serveAddr,0,sizeof(servAddr));
+    memset(&servAddr,0,sizeof(servAddr));
     servAddr.sin_family = AF_INET;
-    servAddr.sinport = htons(SERVER_PORT);
-    serveAddr.sin_addr.s_addr = htonl(INADDR_ANY);
+    servAddr.sin_port = htons(servPort);
+    servAddr.sin_addr.s_addr = htonl(INADDR_ANY);
     if((s = socket(PF_INET,SOCK_DGRAM, 0))<0)
     {
         perror("Error: socket failed!");
