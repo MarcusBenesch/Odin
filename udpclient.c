@@ -42,7 +42,7 @@ int main( int argc, char* argv[])
     }
     len = sendto(s, string, strlen(string), 0, (struct sockaddr*)&servAddr,sizeof(servAddr));
     recvfrom(s, buffer, len, 0, NULL, NULL);
-    buffer[len + 255]= '\0';
+    buffer[len]= '\0';
     printf(" Echo string recieved: %s\n", buffer);
     close(s);
     exit(0);

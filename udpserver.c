@@ -51,10 +51,10 @@ int main( int argc, char* argv[])
     {
         
         len = recvfrom(s, buffer, sizeof(buffer), 0, (struct sockaddr*)&cliAddr, &cliAddrlen);
-        strcpy(returnedBuff, buffer);
+        strcpy(returnedBuff, argv[2]);
         strcat(returnedBuff, argv[2]);
         printf("buffer = %s\n ", returnedBuff);
-        sendto(s, returnedBuff, sizeof(returnedBuff), 0, (struct sockaddr*)&cliAddr, sizeof(cliAddr));
+        sendto(s, returnedBuff, , 0, (struct sockaddr*)&cliAddr, sizeof(cliAddr));
     
     }
 }
