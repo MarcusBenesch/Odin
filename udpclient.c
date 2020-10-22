@@ -40,8 +40,8 @@ int main( int argc, char* argv[])
         perror("Error: socket failed!");
         exit(1);
     }
-    len = sendto(s, string, strlen(string), 0, (struct sockaddr*)&servAddr,sizeof(servAddr));
-    recvfrom(s, buffer, len, 0, NULL, NULL);
+    sendto(s, string, strlen(string), 0, (struct sockaddr*)&servAddr,sizeof(servAddr));
+    len = recvfrom(s, buffer, len, 0, NULL, NULL);
     buffer[len]= '\0';
     printf(" Echo string recieved: %s\n", buffer);
     close(s);
