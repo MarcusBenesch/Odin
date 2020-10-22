@@ -21,14 +21,14 @@ int main( int argc, char* argv[])
     char buffer [256+1];
     struct sockaddr_in servAddr;
 
-    if(argc != 3)
+    if(argc != 4)
     {
         printf("Error: three arguments are needed!");
         exit(1);
     }
-    servName = argv[0];
-    servPort = atoi(argv[1]);
-    string = argv[2];
+    servName = argv[1];
+    servPort = atoi(argv[2]);
+    string = argv[3];
     memset(&servAddr,0,sizeof(servAddr));
     servAddr.sin_family = AF_INET;
     servAddr.sin_port = htons(servPort);
