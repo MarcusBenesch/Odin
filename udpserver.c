@@ -16,6 +16,7 @@ int main( int argc, char* argv[])
     int s;
     int len;
     char buffer[256];
+    char returnedBuff[512];
     struct sockaddr_in servAddr;
     struct sockaddr_in cliAddr;
     int cliAddrlen;
@@ -50,8 +51,9 @@ int main( int argc, char* argv[])
     {
         
         len = recvfrom(s, buffer, sizeof(buffer), 0, (struct sockaddr*)&cliAddr, &cliAddrlen);
-        printf("The buffer is %s \n", buffer);
-        sendto(s, buffer, len, 0, (struct sockaddr*)&cliAddr, sizeof(cliAddr));
+        strcpy(returnedBuff, buffer);
+        strcat(returnedBuff, agrv[2]);
+        sendto(s, returnedBuff, len, 0, (struct sockaddr*)&cliAddr, sizeof(cliAddr));
     
     }
 }
