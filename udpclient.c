@@ -39,7 +39,7 @@ int main( int argc, char* argv[])
         exit(1);
     }
 
-    len = sendto(s, string, strlen(string), 0, (struct sockaddr)&servAddr,sizeof(servAddr));
+    len = sendto(s, string, strlen(string), 0, (struct sockaddr*)&servAddr,sizeof(servAddr));
     recvfrom(s, buffer, len, 0, NULL, NULL);
     buffer[len]= '\0';
     printf(" Echo string recieved: %s", buffer);
