@@ -19,7 +19,7 @@ int main( int argc, char* argv[])
     struct sockaddr_in servAddr;
     struct sockaddr_in cliAddr;
     int cliAddrlen;
-    int servPort
+    int servPort;
     memset(&servAddr,0,sizeof(servAddr));
     servAddr.sin_family = AF_INET;
     servAddr.sin_port = htons(servPort);
