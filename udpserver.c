@@ -25,9 +25,10 @@ int main( int argc, char* argv[])
     servAddr.sin_port = htons(servPort);
     servAddr.sin_addr.s_addr = htonl(INADDR_ANY);
 
-    if(argc != 3)
+    if(argc != 2)
     {
-        printf("Error: three arguments are needed!");
+        printf("Error: two arguments are needed!");
+        printf("There were %d arguments", argc);
         exit(1);
     }
     servPort = atoi(argv[1]);
