@@ -49,13 +49,13 @@ int main( int argc, char* argv[])
     }
     while(1)
     {
-        memset(returnedBuff,0,strlen(returnedBuff));
         len = recvfrom(s, buffer, sizeof(buffer), 0, (struct sockaddr*)&cliAddr, &cliAddrlen);
+        memset(returnedBuff,'\0',strlen(returnedBuff)); 
         strcpy(returnedBuff, buffer);
         strcat(returnedBuff, argv[2]);
         printf("buffer = %s\n ", returnedBuff);
         sendto(s, returnedBuff, strlen(returnedBuff) , 0, (struct sockaddr*)&cliAddr, sizeof(cliAddr));
-        memset(returnedBuff,'\0',strlen(returnedBuff)); 
+        
     
     }
 }
