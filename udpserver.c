@@ -50,7 +50,7 @@ int main( int argc, char* argv[])
     while(1)
     {
         len = recvfrom(s, buffer, sizeof(buffer), 0, (struct sockaddr*)&cliAddr, &cliAddrlen);
-        memset(returnedBuff,'\0',strlen(returnedBuff)); 
+        memset(returnedBuff,'\0',256); 
         strcpy(returnedBuff, buffer);
         strcat(returnedBuff, argv[2]);
         printf("buffer = %s\n ", returnedBuff);
