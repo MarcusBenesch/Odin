@@ -21,7 +21,7 @@ int main(void)
     int cliAddrlen;
     memset(&servAddr,0,sizeof(servAddr));
     servAddr.sin_family = AF_INET;
-    servAddr.sinport = htons(SERVER_PORT);
+    servAddr.sin_port = htons(SERVER_PORT);
     servAddr.sin_addr.s_addr = htonl(INADDR_ANY);
 
     if((s = socket(PF_INET,SOCK_DGRAM, 0))<0)
@@ -29,7 +29,7 @@ int main(void)
         perror("Error: socket failed!");
         exit(1);
     }
-    if((bind(s, (struct sockaddr*)& servAddr, sizeof(serveAddr))<0))
+    if((bind(s, (struct sockaddr*)& servAddr, sizeof(servAddr))<0))
     {
         perror("Error: bind failed");
         exit(1);
@@ -38,7 +38,7 @@ int main(void)
     {
         
         len = recvfrom(s, buffer, sizeof(buffer), 0, (struct sockaddr*)&cliAddr, &cliAddrlen);
-        sendto(s, buffer, len, 0, (struct sockaddr*),&cliAddr, sizeof(cliAddr));
+        sendto(s, buffer, len, 0, (struct sockaddr*)&cliAddr, sizeof(cliAddr));
     
     }
 }
