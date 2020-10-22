@@ -53,6 +53,7 @@ int main( int argc, char* argv[])
         for(int x = 0; x < 256; x ++)
         {
             returnedBuff[x] = '\0';
+            buffer[x] = '\0';
         }
         printf("buffer before = %s\n ", returnedBuff);
         printf("String recieved = %s\n", buffer);
