@@ -10,3 +10,15 @@
 #include <string.h>
 #include <arpa/inet.h>
 #include <sys/wait.h>
+
+int main( int argc, char* argv[])
+{
+    int s;
+    int len;
+    char* servName;
+    int servePort;
+    char* string;
+    char buffer [256+1];
+    struct sockaddr_in servAddr;
+    
+}
