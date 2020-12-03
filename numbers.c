@@ -88,7 +88,7 @@ void generate( int num[7])
                                 printf("%s", output);
                                 if(checkword(output) == 1)
                                 {
-                                printf("%s", output);
+                                printf("%s\n", output);
                                 }
                             }
                         }
