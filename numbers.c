@@ -9,7 +9,7 @@ char word [8];
 
 int main( int ac, char *av[] )
 {
-    int numbers[7] = {2,4,0,3,4,7,9};
+    int numbers[7] = {2,4,9,3,4,7,9};
     generate(numbers);
 }
 //This function takes in 7 numbers, which are the 7 digits of the phone number and generates all possible words.
