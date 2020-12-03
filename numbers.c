@@ -51,7 +51,7 @@ int generate( int num[7])
     
     //char array of the output
     char output[8];
-    output[8] = '\0';
+    output[7] = '\0';
     //Debugging Puposes
     //printf("number [0] = %d, Sting = %s String Length = %d\n",num[0], dial[num[0]], strlen(dial[num[0]]));
     //printf("number [1] = %d, Sting = %s String Length = %d\n",num[1], dial[num[1]], strlen(dial[num[1]]));
