@@ -6,31 +6,34 @@ static char *dial[] = { "", "", "ABC", "DEF", "GHI", "JKL", "MNO", "PQRS", "TUV"
 
 void generate();
 int checkword();
-int phoneNum[7];
-char word [8];
 
 int main( int ac, char *av[] )
 {   
     char temp[12];
-    char first [3];
-    char second [3];
-    char third [4];
+    int phoneNum[7];
+    
     printf("Enter a phone number: ");
     while( (fgets(temp,12,stdin)) != NULL)
     {
         
-        if(sscanf(temp, "%s-%s-%s", first, second, third ) != -1)
+        //validate input char by char
+        if(!isDigit(temp[0])||!isDigit(temp[1])||!isDigit(temp[2])||!isDigit(temp[4])||!isDigit(temp[5])||!isDigit(temp[6])||!isDigit(temp[8])||!isDigit(temp[9])||!isDigit(temp[10])||!isDigit(temp[11])|| temp[3] != '-'|| temp[7]!= '-')
         {
-            printf("Here\n");
-            printf("%s, %s, %s", first, second, third);
-            //generate(phoneNum);
-            printf("Enter another phone number: ");
-
+            printf("Invalid number, try again. The phone number should be 10 digits separated by dashes. ");
         }
         else
         {
-            printf("Invalid number, try again");
+            phoneNum[0] = temp[4] -48;
+            phoneNum[1] = temp[5] -48;
+            phoneNum[2] = temp[6] -48;
+            phoneNum[3] = temp[8] -48;
+            phoneNum[4] = temp[9] -48;
+            phoneNum[5] = temp[10] -48;
+            phoneNum[6] = temp[11] -48;
+            generate(phoneNum);
+            
         }
+        
         
     }
     
