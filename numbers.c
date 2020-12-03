@@ -25,7 +25,7 @@ int generate( int num[7])
     char output[8];
     output[8] = '\0';
     //Debugging Puposes
-    printf("number [0] = %d, Sting = %s String Length = %d\n",num[0], dial[num[0]], strlen(dial[num[0]]));
+    //printf("number [0] = %d, Sting = %s String Length = %d\n",num[0], dial[num[0]], strlen(dial[num[0]]));
     //printf("number [1] = %d, Sting = %s String Length = %d\n",num[1], dial[num[1]], strlen(dial[num[1]]));
     //Iterate through the first digit possibilities
     for(int a =0; a < strlen(dial[num[0]]); a++)
@@ -93,45 +93,45 @@ int checkword(char input[])
         fseek(words, 0L, SEEK_END);  
         long int length = ftell(words); 
         //Debugging Purposes
-        printf("The file is length %d", length);
+        //printf("The file is length %d", length);
         int l = 0; 
         int r = length/8;
         int mid = (l + r)/2;
-        char buffer [7];
+        char buffer [8];
         //Debug purposes
-        printf("buffer = %s, input = %s, l = %d, r = %d, mid = %d\n", buffer, input, l, r, mid);
+        //printf("buffer = %s, input = %s, l = %d, r = %d, mid = %d\n", buffer, input, l, r, mid);
         while(l != r)
         {
             fseek(words, (mid*8), SEEK_SET);
             fgets(buffer, 8, words);
-            for(int x =0; x<7; x++)
+            for(int x =0; x<8; x++)
             {
                 buffer[x] = toupper(buffer[x]);
             }
             //Debugging information
-            printf("buffer = %s, input = %s, l = %d, r = %d, mid = %d\n", buffer, input, l, r, mid);
+            //printf("buffer = %s, input = %s, l = %d, r = %d, mid = %d\n", buffer, input, l, r, mid);
             if(strcmp(buffer, input) < 0)
             {
-                printf("strcmp = %d\n", strcmp(buffer, input) );
+                //printf("strcmp = %d\n", strcmp(buffer, input) );
                 l = mid;
                 mid = (l + r)/2;
             }
             if(strcmp(buffer, input) > 0)
             {
-                printf("strcmp = %d\n", strcmp(buffer, input) );
+                //printf("strcmp = %d\n", strcmp(buffer, input) );
                 r = mid;
                 mid = (l + r)/2;
             }
             if(strcmp(buffer, input) == 0)
             {
                 
-                printf("buffer = %s", buffer);
+                //printf("buffer = %s", buffer);
                 fclose(words);
                 return 1;
             }
             if(l -r == 1|| l - r == -1)
             {
-                printf("strcmp = %d\n", strcmp(buffer, input) );
+                //printf("strcmp = %d\n", strcmp(buffer, input) );
                 infinite = infinite+1;
 
             }
