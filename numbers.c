@@ -47,8 +47,7 @@ int main( int ac, char *av[] )
 void generate( int num[7])
 {
     //char array of the output
-    char output[8];
-    output[7] ='\n';
+    char output[7];
     //Debugging Puposes
     //printf("number [0] = %d, Sting = %s String Length = %d\n",num[0], dial[num[0]], strlen(dial[num[0]]));
     //printf("number [1] = %d, Sting = %s String Length = %d\n",num[1], dial[num[1]], strlen(dial[num[1]]));
@@ -133,7 +132,7 @@ int checkword(char input[8])
                 buffer[x] = toupper(buffer[x]);
             }
             //Debugging information
-            printf("buffer = %s, input = %s, l = %d, r = %d, mid = %d\n", buffer, input, l, r, mid);
+            fprintf("buffer = %s, input = %s, l = %d, r = %d, mid = %d\n", buffer, input, l, r, mid);
             if(strcmp(buffer, input) < 0)
             {
                 l = mid;
