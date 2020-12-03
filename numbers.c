@@ -32,7 +32,7 @@ int main( int ac, char *av[] )
             phoneNum[4] = temp[9] -48;
             phoneNum[5] = temp[10] -48;
             phoneNum[6] = temp[11] -48;
-            printf("%d%d%d-%d%d%d-%d%d%d%d", phoneNum[0],  phoneNum[1],  phoneNum[2],  phoneNum[3],  phoneNum[4],  phoneNum[6],  phoneNum[7]); 
+            printf("%d%d%d-%d%d%d-%d%d%d%d", phoneNum[0],  phoneNum[1],  phoneNum[2],  phoneNum[3],  phoneNum[4],  phoneNum[5],  phoneNum[6]); 
             //generate(phoneNum);
             
         }
