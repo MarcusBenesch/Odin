@@ -87,6 +87,7 @@ int checkword(char input[8])
         int mid = (l + r)/2;
         mid = mid * 8;
         char buffer [8];
+         printf("buffer = %s, input = %s, l = %d, r = %d, mid = %d\n", buffer, input, l, r, mid);
         while(l != r)
         {
             fseek(words, mid, SEEK_SET);
@@ -95,7 +96,7 @@ int checkword(char input[8])
             {
                 buffer[x] = toupper(buffer[x]);
             }
-            printf("buffer = %s, input = %s, l = %d, r = %d, mid = %d\n", buffer, input, l, r, mid);
+            //printf("buffer = %s, input = %s, l = %d, r = %d, mid = %d\n", buffer, input, l, r, mid);
             if(strcmp(buffer, input) < 0)
             {
                 l = mid;
