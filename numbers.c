@@ -29,11 +29,11 @@ void generate( int num[7])
         output [0] = dial[num[0]][a];
 
         //Iterate through the second digit possibilities
-        for(int b =0; a < strlen(dial[num[1]]); b++)
+        for(int b =0; b < strlen(dial[num[1]]); b++)
         {
             output [1] = dial[num[1]][b];
             //Iterate through the third digit possibilities
-            for(int c =0; a < strlen(dial[num[2]]); c++)
+            for(int c =0; c < strlen(dial[num[2]]); c++)
             {
                 output [2] = dial[num[2]][c];
                 output [3] = '\n';
