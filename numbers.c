@@ -77,6 +77,19 @@ int checkword()
         fseek(words, 0L, SEEK_END);  
         long int length = ftell(words); 
         printf("The file is length %d", length);
+        int l = 0; 
+        int r = length/8;
+        int mid = (l + r)/2;
+        mid = mid * 8;
+        fseek(words, mid, SEEK_SET);
+        char buffer [8];
+        fgets(buffer, 8, words);
+        printf("%s", buffer);
+
+
+
+
+
         fclose(words);
         return 0;
     }
