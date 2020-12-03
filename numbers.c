@@ -54,10 +54,12 @@ void generate( int num[7])
     //Iterate through the first digit possibilities
     for(int a =0; a < strlen(dial[num[0]]); a++)
     {
+        printf("1");
         output [0] = dial[num[0]][a];
         //Iterate through the second digit possiblilties
         for(int b =0; b < strlen(dial[num[1]]); b++)
         {
+            printf("2\n");
             output [1] = dial[num[1]][b];
             //Iterate through the third digit possiblilties
             for(int c =0; c < strlen(dial[num[2]]); c++)
