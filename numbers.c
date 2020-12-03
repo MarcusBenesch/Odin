@@ -64,14 +64,17 @@ void generate( int num[7])
             //Iterate through the third digit possiblilties
             for(int c =0; c < strlen(dial[num[2]]); c++)
             {
+                printf("3\n");
             output [2] = dial[num[2]][c];
             //Iterate through the fourth digit possibilities
                 for(int d =0; d < strlen(dial[num[3]]); d++)
                 {
+                    printf("4\n");
                     output [3] = dial[num[3]][d];
                     //Iterate through the fifth digit possibilities
                     for(int e =0; e < strlen(dial[num[4]]); e++)
                     {
+                        printf("5\n");
                         output [4] = dial[num[4]][e];
                         //Iterate through the sixth digit possibilities
                         for(int f =0; f < strlen(dial[num[5]]); f++)
