@@ -12,7 +12,7 @@ char word [8];
 int main( int ac, char *av[] )
 {   
     char temp[12];
-    printf("Enter a phone number");
+    printf("Enter a phone number: ");
     while( (fgets(temp,12,stdin)) != NULL)
     {
         
@@ -20,7 +20,7 @@ int main( int ac, char *av[] )
         {
             printf("Here\n");
             generate(phoneNum);
-            printf("Enter another phone number");
+            printf("Enter another phone number: ");
 
         }
         else
