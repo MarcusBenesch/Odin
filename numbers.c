@@ -85,7 +85,7 @@ void generate( int num[7])
                             {
                                 output [6] = dial[num[6]][g];
                                 //Debug purposes
-                                //printf("%s", output);
+                                printf("%s", output);
                                 if(checkword(output) == 1)
                                 {
                                 printf("%s", output);
