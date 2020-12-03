@@ -11,8 +11,9 @@ char word [8];
 
 int main( int ac, char *av[] )
 {   
+    char k;
     char temp[12];
-    while(fgets(temp,12,stdin) != EOF)
+    while( (k =fgets(temp,12,stdin)) != EOF)
     {
         printf("Enter a phone number");
         if(sscanf(temp, "%d%d%d-%d%d%d-%d%d%d%d", phoneNum[0],phoneNum[1],phoneNum[2],phoneNum[3],phoneNum[4],phoneNum[5],phoneNum[6],phoneNum[7] ) != EOF)
