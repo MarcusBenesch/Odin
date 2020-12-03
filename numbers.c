@@ -10,7 +10,7 @@ int checkword();
 int main( int ac, char *av[] )
 {   
 
-    printf("%d",checkword("CREWMEN"));
+    printf("%d",checkword("CREWMEO"));
     
 
 }
