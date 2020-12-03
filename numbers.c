@@ -132,7 +132,7 @@ int checkword(char input[7])
                 buffer[x] = toupper(buffer[x]);
             }
             //Debugging information
-            printf("buffer = %s, input = %s, l = %d, r = %d, mid = %d\n", buffer, input, l, r, mid);
+            //printf("buffer = %s, input = %s, l = %d, r = %d, mid = %d\n", buffer, input, l, r, mid);
             if(strcmp(buffer, input) < 0)
             {
                 //printf("strcmp = %d\n", strcmp(buffer, input) );
