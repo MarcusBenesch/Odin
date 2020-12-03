@@ -17,6 +17,7 @@ int main( int ac, char *av[] )
 //This function takes in 7 numbers, which are the 7 digits of the phone number and generates all possible words.
 void generate( char num[7])
 {
+    printf("Test\n");
     char *three, *four, *five, *six, *seven, *eight, *nine;
     for(three = dial[num[3] -'0']; *three; three++ )
     {
