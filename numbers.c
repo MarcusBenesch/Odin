@@ -62,7 +62,9 @@ void generate( int num[7])
         }
 
     }
-    int checkword()
+
+}
+int checkword()
     {
         FILE *words;
         words = fopen("P4WORDS.txt", "r" );
@@ -74,8 +76,7 @@ void generate( int num[7])
 
         fseek(words, 0L, SEEK_END);  
         long int length = ftell(words); 
-        printf("The file is length %ld", length);
+        printf("The file is length %d", length);
         fclose(words);
         return 0;
     }
-}
