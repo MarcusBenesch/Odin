@@ -11,6 +11,7 @@ char word [8];
 
 int main( int ac, char *av[] )
 {
+    checkword();
     
     //generate();
 }
