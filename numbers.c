@@ -12,15 +12,22 @@ char word [8];
 int main( int ac, char *av[] )
 {   
     char temp[12];
+    printf("Enter a phone number");
     while( (fgets(temp,12,stdin)) != NULL)
     {
-        printf("Enter a phone number");
+        
         if(sscanf(temp, "%d%d%d-%d%d%d-%d%d%d%d", phoneNum[0],phoneNum[1],phoneNum[2],phoneNum[3],phoneNum[4],phoneNum[5],phoneNum[6],phoneNum[7] ) != EOF)
         {
             printf("Here\n");
             generate(phoneNum);
+            printf("Enter another phone number");
 
         }
+        else
+        {
+            printf("Invalid number, try again");
+        }
+        
     }
     
 
