@@ -3,7 +3,7 @@
 #include <ctype.h> 
 #include <string.h> 
 
-static char *dial[] = { "XXX", "XXX", "ABC", "DEF", "GHI", "JKL", "MNO", "PQRS", "TUV", "WXYZ"};
+static char *dial[] = { "XXX", "XXX", "ABC\n", "DEF\n", "GHI\n", "JKL\n", "MNO", "PQRS", "TUV", "WXYZ"};
 
 void generate();
 int phoneNum[7];
