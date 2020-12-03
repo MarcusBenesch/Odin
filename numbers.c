@@ -25,37 +25,29 @@ void generate( int num[7])
     //Iterate through the first digit possibilities
     for(int a =0; a < strlen(dial[num[0]]); a++)
     {
-        //Debugging Puposes
-        
-        
         output [0] = dial[num[0]][a];
-        
+        //Iterate through the second digit possiblilties
         for(int b =0; b < strlen(dial[num[1]]); b++)
         {
             output [1] = dial[num[1]][b];
-            printf("%c", output[0]);
-            printf("%c\n", output[1]);
-        }
-
-    }
-}
-
-
-/**
-//Iterate through the fourth digit possibilities
-                for(int d =0; a < strlen(dial[num[3]]); d++)
+            //Iterate through the third digit possiblilties
+            for(int c =0; c < strlen(dial[num[2]]); c++)
+            {
+            output [2] = dial[num[2]][c];
+            //Iterate through the fourth digit possibilities
+                for(int d =0; d < strlen(dial[num[3]]); d++)
                 {
                     output [3] = dial[num[3]][d];
                     //Iterate through the fifth digit possibilities
-                    for(int e =0; a < strlen(dial[num[4]]); e++)
+                    for(int e =0; e < strlen(dial[num[4]]); e++)
                     {
                         output [4] = dial[num[4]][e];
                         //Iterate through the sixth digit possibilities
-                        for(int f =0; a < strlen(dial[num[5]]); f++)
+                        for(int f =0; f < strlen(dial[num[5]]); f++)
                         {
                             output [5] = dial[num[5]][f];
                             //Iterate through the seventh digit possibilities
-                            for(int g =0; a < strlen(dial[num[6]]); g++)
+                            for(int g =0; g < strlen(dial[num[6]]); g++)
                             {
                                 output [6] = dial[num[6]][g];
                                 printf("String possibility is %s\n", output);
@@ -63,4 +55,8 @@ void generate( int num[7])
                         }
                     }
                 }
-                    **/
+            }
+        }
+
+    }
+}
