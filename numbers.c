@@ -96,7 +96,7 @@ int checkword(char input[7])
         while(l != r)
         {
             fseek(words, (mid*8), SEEK_SET);
-            fgets(buffer, 7, words);
+            fgets(buffer, 8, words);
             for(int x =0; x<7; x++)
             {
                 buffer[x] = toupper(buffer[x]);
