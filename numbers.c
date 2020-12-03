@@ -13,7 +13,7 @@ char temp[12];
     int phoneNum[7];
     
     printf("Enter a phone number: ");
-    while( (fgets(temp,12,stdin)) != NULL)
+    while( (fgets(temp,13,stdin)))
     {
         
         //validate input char by char
