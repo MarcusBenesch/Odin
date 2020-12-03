@@ -19,10 +19,11 @@ int main( int ac, char *av[] )
     while( (fgets(temp,12,stdin)) != NULL)
     {
         
-        if(sscanf(temp, "%s-%s-%s",  ) != -1)
+        if(sscanf(temp, "%s-%s-%s", first, second, third ) != -1)
         {
             printf("Here\n");
-            generate(phoneNum);
+            printf("%s, %s, %s", first, second, third);
+            //generate(phoneNum);
             printf("Enter another phone number: ");
 
         }
