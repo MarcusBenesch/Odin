@@ -11,7 +11,9 @@ char word [8];
 
 int main( int ac, char *av[] )
 {
-    checkword();
+    char  temp[] = "ABJURNED";
+    int found = checkword(temp);
+    printf("%d", found);
     
     //generate();
 }
@@ -66,7 +68,7 @@ void generate( int num[7])
 }
 //This function checks to see if the word is in the file P4WORDS.TXT via binary search
 //P4WORDS.TXT must be in the current directory and alphabetical with all words being 8 bytes.
-int checkword()
+int checkword(char input[8])
     {
         FILE *words;
         words = fopen("./P4WORDS.TXT", "r" );
@@ -84,18 +86,33 @@ int checkword()
         int r = length/8;
         int mid = (l + r)/2;
         mid = mid * 8;
-        fseek(words, mid, SEEK_SET);
         char buffer [8];
-        fgets(buffer, 8, words);
-        for(int x =0; x<8; x++)
+        while(l != r)
         {
-            buffer[x] = toupper(buffer[x]);
+            fseek(words, mid, SEEK_SET);
+            fgets(buffer, 8, words);
+            for(int x =0; x<8; x++)
+            {
+                buffer[x] = toupper(buffer[x]);
+            }
+            if(strcmp(buffer, input) > 0)
+            {
+                l = mid;
+                mid = mid /2;
+            }
+            if(strcmp(buffer, input) < 0)
+            {
+                r = mid;
+                mid = mid /2;
+            }
+            if(strcmp(buffer, input) == 0)
+            {
+                return 1;
+            }
+
+
+
         }
-        printf("%s", buffer);
-
-
-
-
 
         fclose(words);
         return 0;
