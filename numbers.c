@@ -9,37 +9,10 @@ int checkword();
 
 int main( int ac, char *av[] )
 {   
-    char temp[12];
-    int phoneNum[7];
-    
-    printf("Enter a phone number: ");
-    while( (fgets(temp,13,stdin)) != NULL)
-    {
-        
-        //validate input char by char
-        if(!isdigit(temp[0])||!isdigit(temp[1])||!isdigit(temp[2])||!isdigit(temp[4])||!isdigit(temp[5])||!isdigit(temp[6])||!isdigit(temp[8])||!isdigit(temp[9])||!isdigit(temp[10])||!isdigit(temp[11])|| temp[3] != '-'|| temp[7]!= '-')
-        {
-            printf("%s\n", temp);
-            printf("Invalid number, try again. The phone number should be 10 digits separated by dashes. ");
-        }
-        else
-        {
-            printf("xxx %s\n", temp);
-            phoneNum[0] = temp[4] -48;
-            phoneNum[1] = temp[5] -48;
-            phoneNum[2] = temp[6] -48;
-            phoneNum[3] = temp[8] -48;
-            phoneNum[4] = temp[9] -48;
-            phoneNum[5] = temp[10] -48;
-            phoneNum[6] = temp[11] -48;
-            //Debug purposes
-            //printf("%d%d%d-%d%d%d%d", phoneNum[0],  phoneNum[1],  phoneNum[2],  phoneNum[3],  phoneNum[4],  phoneNum[5],  phoneNum[6]); 
-            generate(phoneNum);
-            
-        }
-        
-        
-    }
+
+        int x [] = {3,0,8,2,7,3,3,4,8,7};
+       printf("%d", checkword("CREDITS"));
+       generate(x);
     
 
 }
@@ -85,7 +58,7 @@ void generate( int num[7])
                             {
                                 output [6] = dial[num[6]][g];
                                 //Debug purposes
-                                //printf("%s", output);
+                                printf("|%s|\n", output);
                                 if(checkword(output) == 1)
                                 {
                                 printf("%s\n", output);
