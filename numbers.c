@@ -40,7 +40,7 @@ char temp[12];
         }
         
         
-    }while( (fgets(temp,13,stdin)))
+    }while( (fgets(temp,13,stdin)));
 
        
     
