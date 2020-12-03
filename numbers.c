@@ -147,7 +147,7 @@ int checkword(char input[8])
             }
             if(strcmp(buffer, input) == 0)
             {
-
+                printf("%s", buffer);
                 ans == 1;
                 break;
             }
