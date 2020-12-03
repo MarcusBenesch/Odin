@@ -11,7 +11,7 @@ char word [8];
 
 int main( int ac, char *av[] )
 {
-    char  temp[] = "ABJURED";
+    char  temp[] = "ABJURNED";
     int found = checkword(temp);
     printf("%d", found);
     
