@@ -128,7 +128,8 @@ int checkword(char input[8])
             }
             if(infinite == 2)
             {
-                break;
+                fclose(words);
+                return 1;
             }
 
 
