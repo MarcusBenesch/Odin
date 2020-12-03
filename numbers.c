@@ -22,7 +22,8 @@ int generate( int num[7])
 {
     
     //char array of the output
-    char output[7];
+    char output[8];
+    output[8] = '\0';
     //Debugging Puposes
     printf("number [0] = %d, Sting = %s String Length = %d\n",num[0], dial[num[0]], strlen(dial[num[0]]));
     //printf("number [1] = %d, Sting = %s String Length = %d\n",num[1], dial[num[1]], strlen(dial[num[1]]));
@@ -64,10 +65,6 @@ int generate( int num[7])
                                 if(checkword(output) == 1)
                                 {
                                 printf("%s\n", output);
-                                }
-                                if(output[0] == 'C' && output[1] == 'R' && output[2] == 'E' &&output[3] == 'D' && output[4] == 'I' && output[5] == 'T' && output[6] == 'S' )
-                                {
-                                    return 0;
                                 }
                             }
                         }
@@ -141,12 +138,6 @@ int checkword(char input[])
             if(infinite == 2)
             {
                 break;
-            }
-            if(buffer[0] == input[0] && buffer[2] == input[2] && buffer[3] == input[3] && buffer[4] == input[4] && buffer[5] == input[5] && buffer[6] == input[6] && buffer[7] == input[7])
-            {
-
-                printf("AAAAAAAAAAAAAAAAAAa");
-                return 1;
             }
 
 
