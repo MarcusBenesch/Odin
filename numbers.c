@@ -32,7 +32,8 @@ int main( int ac, char *av[] )
             phoneNum[4] = temp[9] -48;
             phoneNum[5] = temp[10] -48;
             phoneNum[6] = temp[11] -48;
-            printf("%d%d%d-%d%d%d%d", phoneNum[0],  phoneNum[1],  phoneNum[2],  phoneNum[3],  phoneNum[4],  phoneNum[5],  phoneNum[6]); 
+            //Debug purposes
+            //printf("%d%d%d-%d%d%d%d", phoneNum[0],  phoneNum[1],  phoneNum[2],  phoneNum[3],  phoneNum[4],  phoneNum[5],  phoneNum[6]); 
             generate(phoneNum);
             
         }
@@ -49,32 +50,32 @@ void generate( int num[7])
     char output[8];
     output[7] ='\n';
     //Debugging Puposes
-    printf("number [0] = %d, Sting = %s String Length = %d\n",num[0], dial[num[0]], strlen(dial[num[0]]));
-    printf("number [1] = %d, Sting = %s String Length = %d\n",num[1], dial[num[1]], strlen(dial[num[1]]));
+    //printf("number [0] = %d, Sting = %s String Length = %d\n",num[0], dial[num[0]], strlen(dial[num[0]]));
+    //printf("number [1] = %d, Sting = %s String Length = %d\n",num[1], dial[num[1]], strlen(dial[num[1]]));
     //Iterate through the first digit possibilities
     for(int a =0; a < strlen(dial[num[0]]); a++)
     {
-        printf("1");
+        
         output [0] = dial[num[0]][a];
         //Iterate through the second digit possiblilties
         for(int b =0; b < strlen(dial[num[1]]); b++)
         {
-            printf("2\n");
+            
             output [1] = dial[num[1]][b];
             //Iterate through the third digit possiblilties
             for(int c =0; c < strlen(dial[num[2]]); c++)
             {
-                printf("3\n");
+                
             output [2] = dial[num[2]][c];
             //Iterate through the fourth digit possibilities
                 for(int d =0; d < strlen(dial[num[3]]); d++)
                 {
-                    printf("4\n");
+                    
                     output [3] = dial[num[3]][d];
                     //Iterate through the fifth digit possibilities
                     for(int e =0; e < strlen(dial[num[4]]); e++)
                     {
-                        printf("5\n");
+                        
                         output [4] = dial[num[4]][e];
                         //Iterate through the sixth digit possibilities
                         for(int f =0; f < strlen(dial[num[5]]); f++)
