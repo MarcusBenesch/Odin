@@ -9,7 +9,37 @@ int checkword();
 
 int main( int ac, char *av[] )
 {   
-    printf("%d  ", checkword("WRITING"));
+    char temp[12];
+    int phoneNum[7];
+    
+    printf("Enter a phone number: ");
+    while( (fgets(temp,13,stdin)) != NULL)
+    {
+        
+        //validate input char by char
+        if(!isdigit(temp[0])||!isdigit(temp[1])||!isdigit(temp[2])||!isdigit(temp[4])||!isdigit(temp[5])||!isdigit(temp[6])||!isdigit(temp[8])||!isdigit(temp[9])||!isdigit(temp[10])||!isdigit(temp[11])|| temp[3] != '-'|| temp[7]!= '-')
+        {
+            printf("%s\n", temp);
+            printf("Invalid number, try again. The phone number should be 10 digits separated by dashes. ");
+        }
+        else
+        {
+            printf("xxx %s\n", temp);
+            phoneNum[0] = temp[4] -48;
+            phoneNum[1] = temp[5] -48;
+            phoneNum[2] = temp[6] -48;
+            phoneNum[3] = temp[8] -48;
+            phoneNum[4] = temp[9] -48;
+            phoneNum[5] = temp[10] -48;
+            phoneNum[6] = temp[11] -48;
+            //Debug purposes
+            //printf("%d%d%d-%d%d%d%d", phoneNum[0],  phoneNum[1],  phoneNum[2],  phoneNum[3],  phoneNum[4],  phoneNum[5],  phoneNum[6]); 
+            generate(phoneNum);
+            
+        }
+        
+        
+    }
     
 
 }
@@ -17,8 +47,7 @@ int main( int ac, char *av[] )
 void generate( int num[7])
 {
     //char array of the output
-    char output[8];
-    output[8] ='\n';
+    char output[7];
     //Debugging Puposes
     //printf("number [0] = %d, Sting = %s String Length = %d\n",num[0], dial[num[0]], strlen(dial[num[0]]));
     //printf("number [1] = %d, Sting = %s String Length = %d\n",num[1], dial[num[1]], strlen(dial[num[1]]));
@@ -104,29 +133,29 @@ int checkword(char input[7])
             }
             buffer[8] = '\n';
             //Debugging information
-            printf("buffer = %s, input = %s, l = %d, r = %d, mid = %d\n", buffer, input, l, r, mid);
+            //printf("buffer = %s, input = %s, l = %d, r = %d, mid = %d\n", buffer, input, l, r, mid);
             if(strcmp(buffer, input) < 0)
             {
-                printf("strcmp = %d\n", strcmp(buffer, input) );
+                //printf("strcmp = %d\n", strcmp(buffer, input) );
                 l = mid;
                 mid = (l + r)/2;
             }
             if(strcmp(buffer, input) > 0)
             {
-                printf("strcmp = %d\n", strcmp(buffer, input) );
+                //printf("strcmp = %d\n", strcmp(buffer, input) );
                 r = mid;
                 mid = (l + r)/2;
             }
             if(strcmp(buffer, input) == 0)
             {
                 
-                printf("%s", buffer);
+                //printf("%s", buffer);
                 fclose(words);
                 return 1;
             }
             if(l -r == 1|| l - r == -1)
             {
-                printf("strcmp = %d\n", strcmp(buffer, input) );
+                //printf("strcmp = %d\n", strcmp(buffer, input) );
                 infinite = infinite+1;
 
             }
