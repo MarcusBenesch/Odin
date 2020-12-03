@@ -9,7 +9,7 @@ int checkword();
 
 int main( int ac, char *av[] )
 {   
-    printf("%d  ", checkword("WRITING\n"));
+    printf("%d  ", checkword("WRITING"));
     
 
 }
