@@ -37,7 +37,7 @@ void generate( int num[7])
             {
                 output [2] = dial[num[2]][c];
                 output [3] = '\n';
-                printf("%s\n");
+                printf("%s\n", output);
                
             }
         }
