@@ -120,18 +120,17 @@ int checkword(char input[7])
         int l = 0; 
         int r = length/8;
         int mid = (l + r)/2;
-        char buffer [8];
+        char buffer [7];
         //Debug purposes
          //printf("buffer = %s, input = %s, l = %d, r = %d, mid = %d\n", buffer, input, l, r, mid);
         while(l != r)
         {
             fseek(words, (mid*8), SEEK_SET);
-            fgets(buffer, 8, words);
+            fgets(buffer, 7, words);
             for(int x =0; x<7; x++)
             {
                 buffer[x] = toupper(buffer[x]);
             }
-            buffer[8] = '\n';
             //Debugging information
             //printf("buffer = %s, input = %s, l = %d, r = %d, mid = %d\n", buffer, input, l, r, mid);
             if(strcmp(buffer, input) < 0)
