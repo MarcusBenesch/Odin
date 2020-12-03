@@ -19,10 +19,11 @@ int main( int ac, char *av[] )
 //This function takes in 7 numbers, which are the 7 digits of the phone number and generates all possible words.
 void generate( int num[7])
 {
+    
     //char array of the output
     char output[7];
     //Debugging Puposes
-    //printf("number [0] = %d, Sting = %s String Length = %d\n",num[0], dial[num[0]], strlen(dial[num[0]]));
+    printf("number [0] = %d, Sting = %s String Length = %d\n",num[0], dial[num[0]], strlen(dial[num[0]]));
     //printf("number [1] = %d, Sting = %s String Length = %d\n",num[1], dial[num[1]], strlen(dial[num[1]]));
     //Iterate through the first digit possibilities
     for(int a =0; a < strlen(dial[num[0]]); a++)
