@@ -11,7 +11,7 @@ char word [8];
 
 int main( int ac, char *av[] )
 {
-    char  temp[] = "ABJURNED";
+    char  temp[] = "ABJURED";
     int found = checkword(temp);
     printf("%d", found);
     
@@ -70,6 +70,7 @@ void generate( int num[7])
 //P4WORDS.TXT must be in the current directory and alphabetical with all words being 8 bytes.
 int checkword(char input[8])
     {
+        int infinite = 0;
         int ans = 0;
         FILE *words;
         words = fopen("./P4WORDS.TXT", "r" );
@@ -111,6 +112,15 @@ int checkword(char input[8])
             {
 
                 ans == 1;
+                break;
+            }
+            if(l -r == 1|| l - r == -1)
+            {
+                infinite = infinite+1;
+
+            }
+            if(infinite == 2)
+            {
                 break;
             }
 
