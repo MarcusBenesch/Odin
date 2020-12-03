@@ -107,13 +107,13 @@ int checkword(char input[7])
             printf("buffer = %s, input = %s, l = %d, r = %d, mid = %d\n", buffer, input, l, r, mid);
             if(strcmp(buffer, input) < 0)
             {
-                printf("strcmp = %d", strcmp(buffer, input) );
+                printf("strcmp = %d\n", strcmp(buffer, input) );
                 l = mid;
                 mid = (l + r)/2;
             }
             if(strcmp(buffer, input) > 0)
             {
-                printf("strcmp = %d", strcmp(buffer, input) );
+                printf("strcmp = %d\n", strcmp(buffer, input) );
                 r = mid;
                 mid = (l + r)/2;
             }
@@ -126,7 +126,7 @@ int checkword(char input[7])
             }
             if(l -r == 1|| l - r == -1)
             {
-                printf("strcmp = %d", strcmp(buffer, input) );
+                printf("strcmp = %d\n", strcmp(buffer, input) );
                 infinite = infinite+1;
 
             }
