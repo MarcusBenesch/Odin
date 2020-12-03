@@ -50,7 +50,7 @@ void generate( int num[7])
                             for(int g =0; g < strlen(dial[num[6]]); g++)
                             {
                                 output [6] = dial[num[6]][g];
-                                printf("String possibility is %s\n", output);
+                                printf("String possibility is %s", output);
                             }
                         }
                     }
