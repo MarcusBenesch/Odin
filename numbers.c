@@ -17,7 +17,7 @@ int main( int ac, char *av[] )
     {
         
         //validate input char by char
-        if(!isDigit(temp[0])||!isDigit(temp[1])||!isDigit(temp[2])||!isDigit(temp[4])||!isDigit(temp[5])||!isDigit(temp[6])||!isDigit(temp[8])||!isDigit(temp[9])||!isDigit(temp[10])||!isDigit(temp[11])|| temp[3] != '-'|| temp[7]!= '-')
+        if(!isdigit(temp[0])||!isdigit(temp[1])||!isdigit(temp[2])||!isdigit(temp[4])||!isdigit(temp[5])||!isdigit(temp[6])||!isdigit(temp[8])||!isdigit(temp[9])||!isdigit(temp[10])||!isdigit(temp[11])|| temp[3] != '-'|| temp[7]!= '-')
         {
             printf("Invalid number, try again. The phone number should be 10 digits separated by dashes. ");
         }
