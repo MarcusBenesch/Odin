@@ -99,12 +99,12 @@ int checkword(char input[8])
             if(strcmp(buffer, input) < 0)
             {
                 l = mid;
-                mid = mid /2;
+                int mid = (l + r)/2;
             }
             if(strcmp(buffer, input) > 0)
             {
                 r = mid;
-                mid = mid /2;
+                int mid = (l + r)/2;
             }
             if(strcmp(buffer, input) == 0)
             {
