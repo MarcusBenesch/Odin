@@ -13,7 +13,7 @@ int main( int ac, char *av[] )
         int x [] = {2,7,3,3,4,8,7};
        
        generate(x);
-       printf("%d", checkword("CREDITS"));
+       //printf("%d", checkword("CREDITS"));
     
 
 }
