@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h> 
 
-static char *dial[] = { "XXX\n", "XXX\n", "ABC\n", "DEF\n", "GHI\n", "JKL\n", "MNO\n", "PQRS\n", "TUV\n", "WXYZ\n"};
+static char *dial[] = { "XXX", "XXX", "ABC", "DEF", "GHI", "JKL", "MNO", "PQRS", "TUV", "WXYZ"};
 
 void generate();
 int phoneNum[7];
