@@ -96,12 +96,12 @@ int checkword(char input[8])
                 buffer[x] = toupper(buffer[x]);
             }
             printf("buffer = %s, input = %s, l = %d, r = %d, mid = %d\n", buffer, input, l, r, mid);
-            if(strcmp(buffer, input) > 0)
+            if(strcmp(buffer, input) < 0)
             {
                 l = mid;
                 mid = mid /2;
             }
-            if(strcmp(buffer, input) < 0)
+            if(strcmp(buffer, input) > 0)
             {
                 r = mid;
                 mid = mid /2;
