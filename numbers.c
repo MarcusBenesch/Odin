@@ -56,6 +56,7 @@ void generate( int num[7])
                             }
                         }
                     }
+                    break;
                 }
             }
         }
