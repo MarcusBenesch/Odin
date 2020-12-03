@@ -36,7 +36,18 @@ void generate( int num[7])
             for(int c =0; a < strlen(dial[num[2]]); c++)
             {
                 output [2] = dial[num[2]][c];
-                //Iterate through the fourth digit possibilities
+                output [3] = '\n';
+                printf("%s\n");
+               
+            }
+        }
+
+    }
+}
+
+
+/**
+//Iterate through the fourth digit possibilities
                 for(int d =0; a < strlen(dial[num[3]]); d++)
                 {
                     output [3] = dial[num[3]][d];
@@ -56,10 +67,5 @@ void generate( int num[7])
                             }
                         }
                     }
-                    break;
                 }
-            }
-        }
-
-    }
-}
+                    **/
