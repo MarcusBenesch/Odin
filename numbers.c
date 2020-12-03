@@ -10,12 +10,21 @@ int phoneNum[7];
 char word [8];
 
 int main( int ac, char *av[] )
-{
-    char  temp[] = "ABJURNED";
-    int found = checkword(temp);
-    printf("%d", found);
+{   
+    char temp[12];
+    while(stdin != EOF)
+    {
+        printf("Enter a phone number");
+        fgets(temp,12,stdin);
+        if(sscan(temp, "%d%d%d-%d%d%d-%d%d%d%d", phoneNum[0],phoneNum[1],phoneNum[2],phoneNum[3],phoneNum[4],phoneNum[5],phoneNum[6],phoneNum[7] ) != EOF)
+        {
+            printf("Here\n");
+            generate(phoneNum);
+
+        }
+    }
     
-    //generate();
+
 }
 //This function takes in 7 numbers, which are the 7 digits of the phone number and generates all possible words.
 void generate( int num[7])
@@ -55,7 +64,10 @@ void generate( int num[7])
                             for(int g =0; g < strlen(dial[num[6]]); g++)
                             {
                                 output [6] = dial[num[6]][g];
-                                printf("String possibility is %s", output);
+                                if(checkword(output))
+                                {
+                                printf("%s", output);
+                                }
                             }
                         }
                     }
@@ -97,7 +109,8 @@ int checkword(char input[8])
             {
                 buffer[x] = toupper(buffer[x]);
             }
-            printf("buffer = %s, input = %s, l = %d, r = %d, mid = %d\n", buffer, input, l, r, mid);
+            //Debugging information
+            //printf("buffer = %s, input = %s, l = %d, r = %d, mid = %d\n", buffer, input, l, r, mid);
             if(strcmp(buffer, input) < 0)
             {
                 l = mid;
