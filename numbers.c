@@ -19,7 +19,7 @@ void generate( char num[7])
 {
     printf("Test\n");
     char *three, *four, *five, *six, *seven, *eight, *nine;
-    for(three = dial[num[3] -'0']; *three; three++ )
+    for(three = dial[num['3'] -'0']; *three; three++ )
     {
         printf("%c", three);
     }
