@@ -61,7 +61,7 @@ int generate( int num[7])
                             {
                                 output [6] = dial[num[6]][g];
                                 //Debug purposes
-                                printf("|%s|\n", output);
+                                //printf("|%s|\n", output);
                                 if(checkword(output) == 1)
                                 {
                                 printf("%s\n", output);
@@ -125,7 +125,7 @@ int checkword(char input[])
             if(strcmp(buffer, input) == 0)
             {
                 
-                //printf("buffer = %s", buffer);
+                printf("buffer = %s", buffer);
                 fclose(words);
                 return 1;
             }
