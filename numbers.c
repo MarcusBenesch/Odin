@@ -1,16 +1,18 @@
 #include <stdio.h>
+#include <ctype.h>
 #include <string.h> 
 
-static char *dial[] = { "XXX", "XXX", "ABC", "DEF", "GHI", "JKL", "MNO", "PQRS", "TUV", "WXYZ"};
+static char *dial[] = { "", "", "ABC", "DEF", "GHI", "JKL", "MNO", "PQRS", "TUV", "WXYZ"};
 
 void generate();
+int checkword();
 int phoneNum[7];
 char word [8];
 
 int main( int ac, char *av[] )
 {
-    int numbers[7] = {2,4,9,3,4,7,9};
-    generate(numbers);
+    
+    //generate();
 }
 //This function takes in 7 numbers, which are the 7 digits of the phone number and generates all possible words.
 void generate( int num[7])
@@ -20,8 +22,8 @@ void generate( int num[7])
     output[7] ='\n';
     output [3] = '\n';
     //Debugging Puposes
-    printf("number [0] = %d, Sting = %s String Length = %d\n",num[0], dial[num[0]], strlen(dial[num[0]]));
-    printf("number [1] = %d, Sting = %s String Length = %d\n",num[1], dial[num[1]], strlen(dial[num[1]]));
+    //printf("number [0] = %d, Sting = %s String Length = %d\n",num[0], dial[num[0]], strlen(dial[num[0]]));
+    //printf("number [1] = %d, Sting = %s String Length = %d\n",num[1], dial[num[1]], strlen(dial[num[1]]));
     //Iterate through the first digit possibilities
     for(int a =0; a < strlen(dial[num[0]]); a++)
     {
@@ -58,5 +60,20 @@ void generate( int num[7])
             }
         }
 
+    }
+    int checkword()
+    {
+        FILE *words;
+        words = fopen(P4WORDS.txt, r );
+        if (words == NULL) 
+        { 
+            printf("File Not Found!\n"); 
+            return -1; 
+        } 
+
+        fseek(words, 0L, SEEK_END);  
+        long int length = ftell(words); 
+
+        return 0;
     }
 }
