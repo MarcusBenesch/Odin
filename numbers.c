@@ -122,6 +122,7 @@ int checkword(char input[8])
             }
             if(l -r == 1|| l - r == -1)
             {
+                printf("infinite1\n");
                 infinite = infinite+1;
 
             }
