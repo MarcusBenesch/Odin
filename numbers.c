@@ -65,7 +65,7 @@ int generate( int num[7])
                                 {
                                 printf("%s\n", output);
                                 }
-                                if(output == "CREDITS")
+                                if(output[0] == 'C' && output[1] == 'R' && output[2] == 'E' &&output[3] == 'D' && output[4] == 'I' && output[5] == 'T' && output[6] == 'S' )
                                 {
                                     return 0;
                                 }
