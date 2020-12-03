@@ -4,7 +4,7 @@
 
 static char *dial[] = { "", "", "ABC", "DEF", "GHI", "JKL", "MNO", "PQRS", "TUV", "WXYZ"};
 
-void generate();
+int generate();
 int checkword();
 
 int main( int ac, char *av[] )
@@ -18,7 +18,7 @@ int main( int ac, char *av[] )
 
 }
 //This function takes in 7 numbers, which are the 7 digits of the phone number and generates all possible words.
-void generate( int num[7])
+int generate( int num[7])
 {
     
     //char array of the output
@@ -65,6 +65,10 @@ void generate( int num[7])
                                 {
                                 printf("%s\n", output);
                                 }
+                                if(output == "CREDITS")
+                                {
+                                    return 0;
+                                }
                             }
                         }
                     }
@@ -73,6 +77,7 @@ void generate( int num[7])
         }
 
     }
+    return 0;
 
 }
 //This function checks to see if the word is in the file P4WORDS.TXT via binary search
@@ -91,13 +96,13 @@ int checkword(char input[])
         fseek(words, 0L, SEEK_END);  
         long int length = ftell(words); 
         //Debugging Purposes
-        //printf("The file is length %d", length);
+        printf("The file is length %d", length);
         int l = 0; 
         int r = length/8;
         int mid = (l + r)/2;
         char buffer [7];
         //Debug purposes
-         //printf("buffer = %s, input = %s, l = %d, r = %d, mid = %d\n", buffer, input, l, r, mid);
+        printf("buffer = %s, input = %s, l = %d, r = %d, mid = %d\n", buffer, input, l, r, mid);
         while(l != r)
         {
             fseek(words, (mid*8), SEEK_SET);
@@ -107,29 +112,29 @@ int checkword(char input[])
                 buffer[x] = toupper(buffer[x]);
             }
             //Debugging information
-            //printf("buffer = %s, input = %s, l = %d, r = %d, mid = %d\n", buffer, input, l, r, mid);
+            printf("buffer = %s, input = %s, l = %d, r = %d, mid = %d\n", buffer, input, l, r, mid);
             if(strcmp(buffer, input) < 0)
             {
-                //printf("strcmp = %d\n", strcmp(buffer, input) );
+                printf("strcmp = %d\n", strcmp(buffer, input) );
                 l = mid;
                 mid = (l + r)/2;
             }
             if(strcmp(buffer, input) > 0)
             {
-                //printf("strcmp = %d\n", strcmp(buffer, input) );
+                printf("strcmp = %d\n", strcmp(buffer, input) );
                 r = mid;
                 mid = (l + r)/2;
             }
             if(strcmp(buffer, input) == 0)
             {
                 
-                //printf("%s", buffer);
+                printf("buffer = %s", buffer);
                 fclose(words);
                 return 1;
             }
             if(l -r == 1|| l - r == -1)
             {
-                //printf("strcmp = %d\n", strcmp(buffer, input) );
+                printf("strcmp = %d\n", strcmp(buffer, input) );
                 infinite = infinite+1;
 
             }
