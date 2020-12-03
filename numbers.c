@@ -64,7 +64,7 @@ void generate( int num[7])
     int checkword()
     {
         FILE *words;
-        words = fopen("P4WORDS.txt", r );
+        words = fopen("P4WORDS.txt", 'r' );
         if (words == NULL) 
         { 
             printf("File Not Found!\n"); 
