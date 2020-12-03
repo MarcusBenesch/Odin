@@ -29,7 +29,13 @@ void generate( int num[7])
         
         
         output [0] = dial[num[0]][a];
-        printf("%c", output[0]);
+        
+        for(int b =0; b < strlen(dial[num[1]]); b++)
+        {
+            output [1] = dial[num[1]][b];
+            printf("%c", output[0]);
+            printf("%c\n", output[1]);
+        }
 
     }
 }
