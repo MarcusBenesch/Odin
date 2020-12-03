@@ -77,7 +77,7 @@ void generate( int num[7])
 }
 //This function checks to see if the word is in the file P4WORDS.TXT via binary search
 //P4WORDS.TXT must be in the current directory and alphabetical with all words being 8 bytes.
-int checkword(char input[7])
+int checkword(char input[])
     {
         int infinite = 0;
         FILE *words;
