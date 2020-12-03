@@ -122,7 +122,8 @@ int checkword(char input[8])
         int r = length/8;
         int mid = (l + r)/2;
         char buffer [8];
-         printf("buffer = %s, input = %s, l = %d, r = %d, mid = %d\n", buffer, input, l, r, mid);
+        //Debug purposes
+         //printf("buffer = %s, input = %s, l = %d, r = %d, mid = %d\n", buffer, input, l, r, mid);
         while(l != r)
         {
             fseek(words, (mid*8), SEEK_SET);
