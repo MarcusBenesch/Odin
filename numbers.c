@@ -1,9 +1,7 @@
 #include <stdio.h>
-#include <errno.h>
-#include <ctype.h> 
 #include <string.h> 
 
-static char *dial[] = { "XXX", "XXX", "ABC\n", "DEF\n", "GHI\n", "JKL\n", "MNO", "PQRS", "TUV", "WXYZ"};
+static char *dial[] = { "XXX\n", "XXX\n", "ABC\n", "DEF\n", "GHI\n", "JKL\n", "MNO\n", "PQRS\n", "TUV\n", "WXYZ\n"};
 
 void generate();
 int phoneNum[7];
@@ -18,9 +16,8 @@ int main( int ac, char *av[] )
 void generate( char num[7])
 {
     printf("Test\n");
-    char *three, *four, *five, *six, *seven, *eight, *nine;
-    for(three = dial[num['3'] -'0']; *three; three++ )
+    for(int a =0; a < strlen(dial[3]); a++)
     {
-        printf("%c", three);
+        printf("%c", a);
     }
 }
