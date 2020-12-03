@@ -106,7 +106,6 @@ void generate( int num[7])
 int checkword(char input[8])
     {
         int infinite = 0;
-        int ans = 0;
         FILE *words;
         words = fopen("./P4WORDS.TXT", "r" );
         if (words == NULL) 
@@ -134,7 +133,7 @@ int checkword(char input[8])
                 buffer[x] = toupper(buffer[x]);
             }
             //Debugging information
-            //printf("buffer = %s, input = %s, l = %d, r = %d, mid = %d\n", buffer, input, l, r, mid);
+            printf("buffer = %s, input = %s, l = %d, r = %d, mid = %d\n", buffer, input, l, r, mid);
             if(strcmp(buffer, input) < 0)
             {
                 l = mid;
@@ -166,5 +165,5 @@ int checkword(char input[8])
         }
 
         fclose(words);
-        return ans;
+        return 0;
     }
