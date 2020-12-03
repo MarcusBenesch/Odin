@@ -18,6 +18,7 @@ void generate( int num[7])
     //char array of the output
     char output[8];
     output[7] ='\n';
+    output [3] = '\n';
     //Debugging Puposes
     ///printf("number [0] = %d, Sting = %s",num[0], dial[num[0]]);
 
@@ -25,18 +26,19 @@ void generate( int num[7])
     for(int a =0; a < strlen(dial[num[0]]); a++)
     {
         //Debugging Puposes
-        //printf("%c", dial[num[0]][a]);
+        printf("%c", dial[num[0]][a]);
         output [0] = dial[num[0]][a];
 
         //Iterate through the second digit possibilities
         for(int b =0; b < strlen(dial[num[1]]); b++)
         {
+            printf("%c", dial[num[0]][a]);
             output [1] = dial[num[1]][b];
             //Iterate through the third digit possibilities
             for(int c =0; c < strlen(dial[num[2]]); c++)
             {
+                printf("%c", dial[num[0]][a]);
                 output [2] = dial[num[2]][c];
-                output [3] = '\n';
                 printf("%s\n", output);
                
             }
