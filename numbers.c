@@ -12,11 +12,14 @@ char word [8];
 int main( int ac, char *av[] )
 {   
     char temp[12];
+    char first [3];
+    char second [3];
+    char third [4];
     printf("Enter a phone number: ");
     while( (fgets(temp,12,stdin)) != NULL)
     {
         
-        if(sscanf(temp, "%d%d%d-%d%d%d-%d%d%d%d", phoneNum[0],phoneNum[1],phoneNum[2],phoneNum[3],phoneNum[4],phoneNum[5],phoneNum[6],phoneNum[7] ) != EOF)
+        if(sscanf(temp, "%s-%s-%s",  ) != -1)
         {
             printf("Here\n");
             generate(phoneNum);
