@@ -24,6 +24,7 @@ int main( int ac, char *av[] )
         }
         else
         {
+            printf("xxx %s\n", temp);
             phoneNum[0] = temp[4] -48;
             phoneNum[1] = temp[5] -48;
             phoneNum[2] = temp[6] -48;
