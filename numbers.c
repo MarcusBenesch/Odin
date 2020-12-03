@@ -70,6 +70,7 @@ void generate( int num[7])
 //P4WORDS.TXT must be in the current directory and alphabetical with all words being 8 bytes.
 int checkword(char input[8])
     {
+        int ans = 0;
         FILE *words;
         words = fopen("./P4WORDS.TXT", "r" );
         if (words == NULL) 
@@ -108,7 +109,9 @@ int checkword(char input[8])
             }
             if(strcmp(buffer, input) == 0)
             {
-                return 1;
+
+                ans == 1;
+                break;
             }
 
 
@@ -116,5 +119,5 @@ int checkword(char input[8])
         }
 
         fclose(words);
-        return 0;
+        return ans;
     }
