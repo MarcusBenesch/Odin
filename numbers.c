@@ -9,7 +9,7 @@ int checkword();
 
 int main( int ac, char *av[] )
 {   
-    checkword("WRITING");
+    checkword("WRIOING");
     
 
 }
