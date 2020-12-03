@@ -112,25 +112,28 @@ int checkword(char input[])
             //printf("buffer = %s, input = %s, l = %d, r = %d, mid = %d\n", buffer, input, l, r, mid);
             if(strcmp(buffer, input) < 0)
             {
+                //Debugging information
                 //printf("strcmp = %d\n", strcmp(buffer, input) );
                 l = mid;
                 mid = (l + r)/2;
             }
             if(strcmp(buffer, input) > 0)
             {
+                //Debugging information
                 //printf("strcmp = %d\n", strcmp(buffer, input) );
                 r = mid;
                 mid = (l + r)/2;
             }
             if(strcmp(buffer, input) == 0)
             {
-                
-                printf("buffer = %s", buffer);
+                //Debugging information
+                //printf("buffer = %s", buffer);
                 fclose(words);
                 return 1;
             }
             if(l -r == 1|| l - r == -1)
             {
+                //Debugging information
                 //printf("strcmp = %d\n", strcmp(buffer, input) );
                 infinite = infinite+1;
 
