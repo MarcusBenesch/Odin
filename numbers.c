@@ -116,12 +116,14 @@ int checkword(char input[8])
             }
             if(strcmp(buffer, input) == 0)
             {
+                
                 printf("%s", buffer);
                 fclose(words);
                 return 1;
             }
             if(l -r == 1|| l - r == -1)
             {
+                printf("strcmp = %d", strcmp(buffer, input) );
                 infinite = infinite+1;
 
             }
