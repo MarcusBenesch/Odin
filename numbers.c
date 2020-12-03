@@ -73,6 +73,7 @@ void generate( int num[7])
 
         fseek(words, 0L, SEEK_END);  
         long int length = ftell(words); 
+        printf("The file is length %ld", length);
         fclose(words);
         return 0;
     }
