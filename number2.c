@@ -44,7 +44,7 @@ char temp[12];
             phoneNum[5] = temp[10] -48;
             phoneNum[6] = temp[11] -48;
             //Debug purposes
-            //printf("%d%d%d-%d%d%d%d", phoneNum[0],  phoneNum[1],  phoneNum[2],  phoneNum[3],  phoneNum[4],  phoneNum[5],  phoneNum[6]); 
+            printf("%d%d%d-%d%d%d%d", phoneNum[0],  phoneNum[1],  phoneNum[2],  phoneNum[3],  phoneNum[4],  phoneNum[5],  phoneNum[6]); 
             generate(phoneNum);
             printf("Enter the next phone number: ");
             
