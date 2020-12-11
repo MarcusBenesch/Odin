@@ -1,19 +1,32 @@
 #include <stdio.h>
+#include<stdlib.h>
 #include <ctype.h>
 #include <string.h> 
+#define SIZE 8
 
 static char *dial[] = { "", "", "ABC", "DEF", "GHI", "JKL", "MNO", "PQRS", "TUV", "WXYZ"};
 
+struct tree_node {
+struct tree_node *left, *right;
+char word[ SIZE ];
+};
+typedef struct tree_node node;
+
+
 int generate();
 int checkword();
+void insertNode();
+void insert();
+void debug();
 
 int main( int ac, char *av[] )
 {   
-char temp[12];
+    char temp[12];
     int phoneNum[7];
-    
+    node *root = NULL;
+    insertNode(&root);
     printf("Enter a phone number: ");
-    while( (fgets(temp,13,stdin)))
+    while( (fgets(temp,14,stdin)))
     {
         
         //validate input char by char
@@ -33,20 +46,18 @@ char temp[12];
             phoneNum[6] = temp[11] -48;
             //Debug purposes
             //printf("%d%d%d-%d%d%d%d", phoneNum[0],  phoneNum[1],  phoneNum[2],  phoneNum[3],  phoneNum[4],  phoneNum[5],  phoneNum[6]); 
-            generate(phoneNum);
+            generate(phoneNum, &root);
             printf("Enter the next phone number: ");
             
         }
         
         
     }
-
-       
     
-
+    
 }
 //This function takes in 7 numbers, which are the 7 digits of the phone number and generates all possible words.
-int generate( int num[7])
+int generate( int num[7],  node ** root)
 {
     
     //char array of the output
@@ -90,12 +101,12 @@ int generate( int num[7])
                                 output [6] = dial[num[6]][g];
                                 //Debug purposes
                                 //printf("|%s|\n", output);
-                                if(checkword(output) == 1)
+                                if(checkword(root, output) == 1)
                                 {
                                 printf("%s\n", output);
                                 }
                             }
-                        }
+                        } 
                     }
                 }
             }
@@ -105,76 +116,96 @@ int generate( int num[7])
     return 0;
 
 }
-//This function checks to see if the word is in the file P4WORDS.TXT via binary search
-//P4WORDS.TXT must be in the current directory and alphabetical with all words being 8 bytes.
-int checkword(char input[])
-    {
-        int infinite = 0;
-        FILE *words;
+
+void insertNode(node ** root)
+{
+    FILE *words;
         words = fopen("./P4WORDS.TXT", "r" );
         if (words == NULL) 
         { 
             printf("File Not Found!\n"); 
-            return -1; 
+            return; 
         } 
 
         fseek(words, 0L, SEEK_END);  
         long int length = ftell(words); 
-        //Debugging Purposes
-        //printf("The file is length %d", length);
-        int l = 0; 
-        int r = length/8;
-        int mid = (l + r)/2;
         char buffer [8];
-        //Debug purposes
-        //printf("buffer = %s, input = %s, l = %d, r = %d, mid = %d\n", buffer, input, l, r, mid);
-        while(l != r)
+        printf("Length = %d\n", length);
+        for(int count = 0; count < length-7; count = count + 8)
         {
-            fseek(words, (mid*8), SEEK_SET);
+            fseek(words, count, SEEK_SET);
             fgets(buffer, 8, words);
             for(int x =0; x<8; x++)
             {
                 buffer[x] = toupper(buffer[x]);
             }
-            //Debugging information
-            //printf("buffer = %s, input = %s, l = %d, r = %d, mid = %d\n", buffer, input, l, r, mid);
-            if(strcmp(buffer, input) < 0)
-            {
-                //Debugging information
-                //printf("strcmp = %d\n", strcmp(buffer, input) );
-                l = mid;
-                mid = (l + r)/2;
-            }
-            if(strcmp(buffer, input) > 0)
-            {
-                //Debugging information
-                //printf("strcmp = %d\n", strcmp(buffer, input) );
-                r = mid;
-                mid = (l + r)/2;
-            }
-            if(strcmp(buffer, input) == 0)
-            {
-                //Debugging information
-                //printf("buffer = %s", buffer);
-                fclose(words);
-                return 1;
-            }
-            if(l -r == 1|| l - r == -1)
-            {
-                //Debugging information
-                //printf("strcmp = %d\n", strcmp(buffer, input) );
-                infinite = infinite+1;
-
-            }
-            if(infinite == 2)
-            {
-                break;
-            }
-
-
+            insert(&(*root), buffer);
+            //printf("Buffer = %s\n", buffer);
 
         }
-
         fclose(words);
-        return 0;
+
+        //debug(root);
+}
+
+void insert(node ** tree, char data [8])
+{
+    //printf("Inserting %s into %d\n", data, tree);
+    node *temp = NULL;
+    if(!(*tree))
+    {
+        temp = (node *)malloc(sizeof(node));
+        temp->left = NULL;
+        temp->right = NULL;
+        strcpy(temp->word, data);
+        *tree = temp;
+        return;
     }
+
+    if(strcmp((*tree)->word, data)>0)
+    {
+        insert(&(*tree)->left, data);
+    }
+    else if(strcmp((*tree)->word, data)<0)
+    {
+        insert(&(*tree)->right, data);
+    }
+
+}
+
+
+int checkword( node **root, char word[] )
+{
+    //Debugging purposes
+    //printf("Checkword reached\n");
+    while ( *root != NULL )
+    {
+        //root gets assigned the link that goes to the left
+        if ( strcmp((*root)->word, word)>0)
+        {
+            root = &(*root)->left;
+        }
+        //root gets assigned the link that goes right    
+        else if (strcmp((*root)->word, word)<0)
+        {
+            root = &(*root)->right;
+        }
+        else
+        {
+        return(1);
+        }
+    }
+    return(0); // fell off the end of the while loop
+}
+
+
+
+void debug(node * tree)
+{
+    if (tree)
+    {
+        debug(tree->left);
+        printf("%s\n",tree->word);
+        debug(tree->right);
+    }
+}
