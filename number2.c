@@ -7,7 +7,7 @@
 static char *dial[] = { "", "", "ABC", "DEF", "GHI", "JKL", "MNO", "PQRS", "TUV", "WXYZ"};
 
 struct tree_node {
-tree_node *left, *right;
+struct tree_node *left, *right;
 char word[ SIZE ];
 };
 typedef struct tree_node node;
@@ -15,7 +15,7 @@ typedef struct tree_node node;
 
 int generate();
 int checkword();
-node * insertNode();
+node  insertNode();
 void insert();
 void debug();
 
@@ -89,7 +89,7 @@ int generate( int num[7],  node * root)
 
 }
 
-node * insertNode()
+node  insertNode()
 {
     node * root = NULL;
     FILE *words;
@@ -97,7 +97,7 @@ node * insertNode()
         if (words == NULL) 
         { 
             printf("File Not Found!\n"); 
-            return root; 
+            return *root; 
         } 
 
         fseek(words, 0L, SEEK_END);  
@@ -117,7 +117,7 @@ node * insertNode()
 
         }
         fclose(words);
-        return root;
+        return *root;
         //debug(root);
 }
 
