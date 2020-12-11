@@ -23,7 +23,7 @@ void debug();
 int main( int ac, char *av[] )
 {   
     
-    static node *root = NULL;
+    node *root = NULL;
     int temp [] = {5,5,5,5,5,5,5};
     //generate(temp, root);
     insertNode(root);
@@ -132,7 +132,6 @@ void insert(node ** tree, char data [8])
         temp->right = NULL;
         strcpy(temp->word, data);
         *tree = temp;
-        return;
     }
 
     if(strcmp((*tree)->word, data)>0)
