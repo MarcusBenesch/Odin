@@ -168,7 +168,7 @@ void debug(node * tree)
     if (tree)
     {
         debug(tree->left);
-        printf("%d\n",tree->word);
+        printf("%d\n",&(tree->word));
         debug(tree->right);
     }
 }
