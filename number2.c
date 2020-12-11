@@ -170,12 +170,12 @@ int checkword( node **root, char word[] )
         //root gets assigned the link that goes to the left
         if ( strcmp((*root)->word, word)>0)
         {
-            *root = &(*root)->left;
+            root = &(*root)->left;
         }
         //root gets assigned the link that goes right    
         else if (strcmp((*root)->word, word)<0)
         {
-            *root = &(*root)->right;
+            root = &(*root)->right;
         }
         else
         {
