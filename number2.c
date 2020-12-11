@@ -26,7 +26,7 @@ int main( int ac, char *av[] )
     insertNode(&root);
     int temp [] = {5,5,5,5,5,5,5};
     //generate(temp, root);
-    printf("String is %s, checkword = %d", "YEARNED", checkword(root, "YEARNED")
+    printf("String is %s, checkword = %d", "YEARNED", checkword(root, "YEARNED");
     //debug(root);
     
 }
