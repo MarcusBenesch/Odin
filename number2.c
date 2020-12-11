@@ -25,6 +25,7 @@ int main( int ac, char *av[] )
     
     node *root = NULL;
     insertNode(root);
+    printf("root = %s", root->word);
     debug(root);
     
 }
@@ -114,7 +115,7 @@ int insertNode(node ** root)
 
 void insert(node ** tree, char data [8])
 {
-    printf("Inserting %s into %d\n", data, tree);
+    //printf("Inserting %s into %d\n", data, tree);
     node *temp = NULL;
     if(!(*tree))
     {
