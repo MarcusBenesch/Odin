@@ -108,6 +108,10 @@ int insertNode(node ** root)
         {
             fseek(words, count, SEEK_SET);
             fgets(buffer, 8, words);
+            for(int x =0; x<8; x++)
+            {
+                buffer[x] = toupper(buffer[x]);
+            }
             //insert(&root, buffer);
             printf("Buffer = %s\n", buffer);
 
