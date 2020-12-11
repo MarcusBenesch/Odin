@@ -13,17 +13,16 @@ char word[ SIZE ];
 typedef struct tree_node node;
 
 
-
 int generate();
 int checkword();
-int insertNode();
+node * insertNode();
 void insert();
 void debug();
 
 int main( int ac, char *av[] )
 {   
     
-    static node *root = NULL;
+    node *root = insertNode;
     int temp [] = {5,5,5,5,5,5,5};
     //generate(temp, root);
     insertNode(root);
@@ -31,7 +30,7 @@ int main( int ac, char *av[] )
     
 }
 //This function takes in 7 numbers, which are the 7 digits of the phone number and generates all possible words.
-int generate( int num[7], static node ** root)
+int generate( int num[7],  node * root)
 {
     
     //char array of the output
@@ -91,8 +90,9 @@ int generate( int num[7], static node ** root)
 
 }
 
-int insertNode(static node * root)
+node * insertNode()
 {
+    node * root = NULL;
     FILE *words;
         words = fopen("./P4WORDS.TXT", "r" );
         if (words == NULL) 
@@ -118,6 +118,7 @@ int insertNode(static node * root)
 
         }
         fclose(words);
+        return root;
         //debug(root);
 }
 
