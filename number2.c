@@ -91,13 +91,13 @@ int generate( int num[7],  node * root)
 
 node  insertNode()
 {
-    node * root = NULL;
+    node  root;
     FILE *words;
         words = fopen("./P4WORDS.TXT", "r" );
         if (words == NULL) 
         { 
             printf("File Not Found!\n"); 
-            return *root; 
+            return root; 
         } 
 
         fseek(words, 0L, SEEK_END);  
@@ -112,12 +112,12 @@ node  insertNode()
             {
                 buffer[x] = toupper(buffer[x]);
             }
-            insert(&root, buffer);
+            insert(root, buffer);
             printf("Buffer = %s\n", buffer);
 
         }
         fclose(words);
-        return *root;
+        return root;
         //debug(root);
 }
 
