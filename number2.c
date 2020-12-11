@@ -195,8 +195,8 @@ void debug(node * tree)
 {
     if (tree)
     {
-        print_inorder(tree->left);
+        debug(tree->left);
         printf("%d\n",tree->word);
-        print_inorder(tree->right);
+        debug(tree->right);
     }
 }
