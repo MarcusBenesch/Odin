@@ -25,7 +25,7 @@ int main( int ac, char *av[] )
     
     node *root = NULL;
     insertNode(root);
-    printf("root = %s", root->word);
+    //printf("root = %s", root->word);
     //debug(root);
     
 }
