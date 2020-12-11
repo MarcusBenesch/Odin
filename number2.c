@@ -116,6 +116,7 @@ int insertNode(node ** root)
 
         }
         fclose(words);
+        debug(root);
 }
 
 void insert(node ** tree, char data [8])
