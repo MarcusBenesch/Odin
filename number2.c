@@ -137,10 +137,12 @@ void insert(node * tree, char data [8])
 
     else if(strcmp(tree->word, data)>0)
     {
+        printf("DEgbug 2");
         insert(tree->left, data);
     }
     else if(strcmp(tree->word, data)<0)
     {
+        printf("DEgbug 3");
         insert(tree->right, data);
     }
 
