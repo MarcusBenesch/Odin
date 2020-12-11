@@ -47,7 +47,6 @@ int main( int ac, char *av[] )
             //Debug purposes
             //printf("%d%d%d-%d%d%d%d", phoneNum[0],  phoneNum[1],  phoneNum[2],  phoneNum[3],  phoneNum[4],  phoneNum[5],  phoneNum[6]); 
             generate(phoneNum, &root);
-            debug(root);
             printf("Enter the next phone number: ");
             
         }
