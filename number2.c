@@ -17,7 +17,7 @@ node *root = NULL;
 int generate();
 int checkword();
 int insertNode();
-int insert();
+void insert();
 
 int main( int ac, char *av[] )
 {   
@@ -168,12 +168,12 @@ int checkword( node *root, char word[] )
     while ( root != NULL )
     {
         //root gets assigned the link that goes to the left
-        if ( strcmp(*root->word, word)>0)
+        if ( strcmp(&root->word, word)>0)
         {
             *root = *root->left;
         }
         //root gets assigned the link that goes right    
-        else if ( strcmp(*root->word, word)<0)
+        else if ( strcmp(&root->word, word)<0)
         {
             *root = *root->right;
         }
