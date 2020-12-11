@@ -15,14 +15,15 @@ typedef struct tree_node node;
 
 int generate();
 int checkword();
-node * insertNode();
+void insertNode();
 void insert();
 void debug();
 
 int main( int ac, char *av[] )
 {   
     
-    node **root = insertNode;
+    node *root = NULL;
+    insertNode(root);
     int temp [] = {5,5,5,5,5,5,5};
     //generate(temp, root);
     debug(root);
@@ -89,9 +90,8 @@ int generate( int num[7],  node * root)
 
 }
 
-node * insertNode()
+void insertNode(node * root)
 {
-    node * root = NULL;
     FILE *words;
         words = fopen("./P4WORDS.TXT", "r" );
         if (words == NULL) 
@@ -117,7 +117,7 @@ node * insertNode()
 
         }
         fclose(words);
-        return root;
+
         //debug(root);
 }
 
