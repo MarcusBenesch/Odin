@@ -97,7 +97,7 @@ void insertNode(node * root)
         if (words == NULL) 
         { 
             printf("File Not Found!\n"); 
-            return root; 
+            return; 
         } 
 
         fseek(words, 0L, SEEK_END);  
