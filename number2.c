@@ -112,7 +112,7 @@ void insertNode(node ** root)
             {
                 buffer[x] = toupper(buffer[x]);
             }
-            insert(&root, buffer);
+            insert(&(*root), buffer);
             printf("Buffer = %s\n", buffer);
 
         }
