@@ -130,7 +130,7 @@ void insertNode(node ** root)
         fseek(words, 0L, SEEK_END);  
         long int length = ftell(words); 
         char buffer [8];
-        printf("Length = %d\n", length);
+        //printf("Length = %d\n", length);
         for(int count = 0; count < length-7; count = count + 8)
         {
             fseek(words, count, SEEK_SET);
