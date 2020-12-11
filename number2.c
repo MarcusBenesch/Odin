@@ -125,7 +125,7 @@ void insert(node * tree, char data [8])
 {
     printf("Inserting %s into %d\n", data, tree);
     node *temp = NULL;
-    if(tree->left == NULL)
+    if(tree->left == NULL &&  tree->right == NULL)
     {
         temp = (node *)malloc(sizeof(node));
         temp->left = NULL;
