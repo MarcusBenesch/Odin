@@ -25,7 +25,6 @@ int main( int ac, char *av[] )
     
     node *root = NULL;
     insertNode(root);
-    //printf("root = %s", root->word);
     //debug(root);
     
 }
@@ -112,7 +111,7 @@ int insertNode(node ** root)
             {
                 buffer[x] = toupper(buffer[x]);
             }
-            //insert(&root, buffer);
+            insert(&root, buffer);
             printf("Buffer = %s\n", buffer);
 
         }
