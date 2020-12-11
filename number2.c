@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include<stdlib.h>
 #include <ctype.h>
 #include <string.h> 
 #define SIZE 8
@@ -11,11 +12,12 @@ char word[ SIZE ];
 };
 typedef struct tree_node node;
 
-node root = NULL;
+node *root = NULL;
 
 int generate();
 int checkword();
 int insertNode();
+int insert();
 
 int main( int ac, char *av[] )
 {   
