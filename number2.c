@@ -127,6 +127,7 @@ void insert(node * tree, char data [8])
     node *temp = NULL;
     if(tree == NULL)
     {
+        printf("DEgbug 1");
         temp = (node *)malloc(sizeof(node));
         temp->left = NULL;
         temp->right = NULL;
