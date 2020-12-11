@@ -135,7 +135,7 @@ void insert(node * tree, char data [8])
         *tree = *temp;
     }
 
-    if(strcmp(tree->word, data)>0)
+    else if(strcmp(tree->word, data)>0)
     {
         insert(tree->left, data);
     }
