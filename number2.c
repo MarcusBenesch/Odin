@@ -121,30 +121,31 @@ int insertNode(node * root)
         debug(root);
 }
 
-void insert(node * tree, char data [8])
+void insert(node ** tree, char data [8])
 {
     printf("Inserting %s into %d\n", data, tree);
     node *temp = NULL;
-    if(tree->left == NULL &&  tree->right == NULL)
+    if(!(*tree))
     {
         temp = (node *)malloc(sizeof(node));
         temp->left = NULL;
         temp->right = NULL;
         strcpy(temp->word, data);
-        *tree = *temp;
+        *tree = temp;
+        return;
     }
 
-    else if(strcmp(tree->word, data)>0)
+    if(strcmp((*tree)->word, data)>0)
     {
-        insert(tree->left, data);
+        insert(&(*tree)->left, data);
     }
-    else if(strcmp(tree->word, data)<0)
+    else if(strcmp((*tree)->word, data)<0)
     {
-
-        insert(tree->right, data);
+        insert(&(*tree)->right, data);
     }
 
 }
+
 
 int checkword( node **root, char word[] )
 {
