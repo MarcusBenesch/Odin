@@ -26,8 +26,8 @@ int main( int ac, char *av[] )
     insertNode(&root);
     int temp [] = {5,5,5,5,5,5,5};
     //generate(temp, root);
-    printf("String is %s, checkword = %d", "YEARNED", checkword(root, "YEARNED\0"));
-    debug(root);
+    printf("String is %s, checkword = %d", "YEARNED", checkword(&root, "YEARNED\0"));
+    //debug(root);
     
 }
 //This function takes in 7 numbers, which are the 7 digits of the phone number and generates all possible words.
