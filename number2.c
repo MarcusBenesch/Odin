@@ -165,6 +165,7 @@ void insert(node ** tree, char data [8])
 
 int checkword( node **root, char word[] )
 {
+    printf("Checkword reached\n");
     while ( *root != NULL )
     {
         //root gets assigned the link that goes to the left
