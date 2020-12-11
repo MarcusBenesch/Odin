@@ -22,12 +22,9 @@ void debug();
 
 int main( int ac, char *av[] )
 {   
-    char one [8] = "aaaa";
+    
     node *root = NULL;
-    insert(&root, one);
-    insert(&root, "aaab");
-    insert(&root, "aaac");
-    insert(&root, "aaad");
+    insertNode(root);
     debug(root);
     
 }
