@@ -26,7 +26,7 @@ int main( int ac, char *av[] )
     node *root = NULL;
     insertNode(root);
     printf("root = %s", root->word);
-    debug(root);
+    //debug(root);
     
 }
 //This function takes in 7 numbers, which are the 7 digits of the phone number and generates all possible words.
