@@ -23,8 +23,7 @@ void debug();
 int main( int ac, char *av[] )
 {   
     
-    node *root;
-    root = NULL;
+    node *root = NULL;
     int temp [] = {5,5,5,5,5,5,5};
     //generate(temp, root);
     insertNode(root);
@@ -92,7 +91,7 @@ int generate( int num[7], node ** root)
 
 }
 
-int insertNode(node ** root)
+int insertNode(node * root)
 {
     FILE *words;
         words = fopen("./P4WORDS.TXT", "r" );
@@ -122,26 +121,26 @@ int insertNode(node ** root)
         //debug(root);
 }
 
-void insert(node ** tree, char data [8])
+void insert(node * tree, char data [8])
 {
     //printf("Inserting %s into %d\n", data, tree);
     node *temp = NULL;
-    if(!(*tree))
+    if(!(tree))
     {
         temp = (node *)malloc(sizeof(node));
         temp->left = NULL;
         temp->right = NULL;
         strcpy(temp->word, data);
-        *tree = temp;
+        *tree = *temp;
     }
 
-    if(strcmp((*tree)->word, data)>0)
+    if(strcmp(tree->word, data)>0)
     {
-        insert(&(*tree)->left, data);
+        insert(&tree->left, data);
     }
-    else if(strcmp((*tree)->word, data)<0)
+    else if(strcmp(tree->word, data)<0)
     {
-        insert(&(*tree)->right, data);
+        insert(&tree->right, data);
     }
 
 }
