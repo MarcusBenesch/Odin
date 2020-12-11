@@ -163,19 +163,19 @@ void insert(node ** tree, char data [8])
 
 }
 
-int checkword( node *root, char word[] )
+int checkword( node **root, char word[] )
 {
-    while ( root != NULL )
+    while ( *root != NULL )
     {
         //root gets assigned the link that goes to the left
-        if ( strcmp(&root->word, word)>0)
+        if ( strcmp((*root)->word, word)>0)
         {
-            *root = *root->left;
+            *root = &(*root)->left;
         }
         //root gets assigned the link that goes right    
-        else if ( strcmp(&root->word, word)<0)
+        else if (strcmp((*root)->word, word)<0)
         {
-            *root = *root->right;
+            *root = &(*root)->right;
         }
         else
         {
