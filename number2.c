@@ -7,7 +7,7 @@
 static char *dial[] = { "", "", "ABC", "DEF", "GHI", "JKL", "MNO", "PQRS", "TUV", "WXYZ"};
 
 struct tree_node {
-struct tree_node *left, *right;
+tree_node *left, *right;
 char word[ SIZE ];
 };
 typedef struct tree_node node;
@@ -22,7 +22,7 @@ void debug();
 int main( int ac, char *av[] )
 {   
     
-    node *root = &(insertNode);
+    node *root = insertNode;
     int temp [] = {5,5,5,5,5,5,5};
     //generate(temp, root);
     debug(root);
