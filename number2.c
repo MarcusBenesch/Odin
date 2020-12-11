@@ -23,7 +23,7 @@ void debug();
 int main( int ac, char *av[] )
 {   
     
-    node *root = NULL;
+    static node *root = NULL;
     int temp [] = {5,5,5,5,5,5,5};
     //generate(temp, root);
     insertNode(root);
