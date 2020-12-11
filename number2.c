@@ -18,6 +18,7 @@ int generate();
 int checkword();
 int insertNode();
 void insert();
+void debug();
 
 int main( int ac, char *av[] )
 {   
@@ -46,6 +47,7 @@ char temp[12];
             //Debug purposes
             printf("%d%d%d-%d%d%d%d", phoneNum[0],  phoneNum[1],  phoneNum[2],  phoneNum[3],  phoneNum[4],  phoneNum[5],  phoneNum[6]); 
             generate(phoneNum);
+            debug(root);
             printf("Enter the next phone number: ");
             
         }
@@ -165,7 +167,8 @@ void insert(node ** tree, char data [8])
 
 int checkword( node **root, char word[] )
 {
-    printf("Checkword reached\n");
+    //Debugging purposes
+    //printf("Checkword reached\n");
     while ( *root != NULL )
     {
         //root gets assigned the link that goes to the left
@@ -184,4 +187,16 @@ int checkword( node **root, char word[] )
         }
     }
     return(0); // fell off the end of the while loop
+}
+
+
+
+void debug(node * tree)
+{
+    if (tree)
+    {
+        print_inorder(tree->left);
+        printf("%d\n",tree->word);
+        print_inorder(tree->right);
+    }
 }
