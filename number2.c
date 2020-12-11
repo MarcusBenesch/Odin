@@ -105,7 +105,8 @@ int insertNode(node ** root)
         printf("Length = %d\n", length);
         for(int count = 0; count < length; count = count + 8)
         {
-            fgets(buffer, count, words);
+            fseek(words, count, SEEK_SET);
+            fgets(buffer, 8, words);
             printf("Buffer = %s\n", buffer);
             insert(&root, buffer);
 
