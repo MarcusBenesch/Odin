@@ -26,7 +26,7 @@ int main( int ac, char *av[] )
     insertNode(root);
     int temp [] = {5,5,5,5,5,5,5};
     //generate(temp, root);
-    debug(root);
+    //debug(root);
     
 }
 //This function takes in 7 numbers, which are the 7 digits of the phone number and generates all possible words.
@@ -118,7 +118,7 @@ void insertNode(node * root)
         }
         fclose(words);
 
-        //debug(root);
+        debug(root);
 }
 
 void insert(node ** tree, char data [8])
