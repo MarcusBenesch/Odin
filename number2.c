@@ -31,7 +31,7 @@ int main( int ac, char *av[] )
     
 }
 //This function takes in 7 numbers, which are the 7 digits of the phone number and generates all possible words.
-int generate( int num[7])
+int generate( int num[7], node ** root)
 {
     
     //char array of the output
@@ -91,7 +91,7 @@ int generate( int num[7])
 
 }
 
-int insertNode()
+int insertNode(node ** root)
 {
     FILE *words;
         words = fopen("./P4WORDS.TXT", "r" );
