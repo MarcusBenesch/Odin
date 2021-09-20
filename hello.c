@@ -17,4 +17,4 @@ int main( void )  {
 	/* Proper way to finish a program in a POSIX-system. */
 	exit( EXIT_SUCCESS );
 
-} /* end main()
+} /* end main() */
