@@ -12,11 +12,11 @@
 int readline( int fd, char *buf, int bufsz )
 {
     /* Maximum number of loop iterations in case things go bad. */
-    char *temp[bufsz];
+    char *temp[256];
     int count = 0;
     int err = 1;
     int i;
-    for (i = 0; i < bufsz-1; i++) {
+    for (i = 0; i < bufsz-1; i < 255; i++) {
         tmp = read(fd, *str, 1);
         if(temp[i] == '\n' || temp[i] == '\0')
         {
