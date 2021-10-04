@@ -7,6 +7,7 @@
 
 #include<stdio.h>
 #include<stdlib.h>
+#include <unistd.h>
 
 
 int writeline( int fd, const char *str ) {
@@ -21,7 +22,7 @@ int writeline( int fd, const char *str ) {
 
         if(c = '\0')
         {
-            int write(fd, c, 1);
+            int write(fd, "aaaa", 1);
         }
         if(write == -1)
         {
