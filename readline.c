@@ -26,11 +26,12 @@ int readline( int fd, char *buf, int bufsz )
         }
         if(buf[i]== '\0' || buf[i]== '\n')
         {
-            return i;
+            return i + 1;
         }
 
 
     }
+    return bufsz + 1;
 
 
 }
