@@ -18,7 +18,7 @@ int readline( int fd, char *buf, int bufsz )
     int tmp = 0;
     int end = '\0';
     for (i = 0; i < bufsz-1; i++) {
-        tmp = read(int fd, *buf, 1);
+        tmp = read(fd, *buf, 1);
         if(tmp == -1 || tmp == 0){
             return tmp;
         }
@@ -31,7 +31,7 @@ int readline( int fd, char *buf, int bufsz )
 
 
     }
-    return bufsz + 1;
+    return bufsz;
 
 
 }
