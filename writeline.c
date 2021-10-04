@@ -18,7 +18,7 @@ int writeline( int fd, const char *str ) {
     int count = 0;
     int i;
     int tmp = 0;
-    int end = '\n';
+    char end = '\n';
     for (i = 0; i < MAXSTRLEN; i++) {
 
         char c = str[i]; 
