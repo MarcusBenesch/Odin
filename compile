@@ -1,5 +1,6 @@
 #!/bin/bash
 
+gcc -c -Wall -Wstrict-prototypes -ansi -pedantic-errors readline.c
 gcc -c -Wall -Wstrict-prototypes -ansi -pedantic-errors writeline.c
 gcc -c -Wall -Wstrict-prototypes -ansi -pedantic-errors test.c
-gcc -Wall -o test test.o  writeline.o
+gcc -Wall -o test test.o  readline.o writeline.o
