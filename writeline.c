@@ -2,7 +2,7 @@
  * Auth: Marcus Benesch
  * Date: 09-19-2021
  * Course: CSCI-4500 (Sec: 002)
- * Desc:  PREPROJECT-01, A Simple "Hello, World" C program.
+ * Desc:  PREPROJECT-02, Funtion to write a sting to a line.
  */
 
 #include<stdio.h>
