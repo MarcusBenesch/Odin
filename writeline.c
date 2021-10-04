@@ -30,11 +30,13 @@ int writeline( int fd, const char *str ) {
         {
             return -1;
         }
+        count = count + 1;
+        
 
     }
 
   
 
-
+return count;
 
 } /* end writeline() */
