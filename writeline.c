@@ -16,7 +16,8 @@ int writeline( int fd, const char *str ) {
   const size_t MAXSTRLEN = 256;
 
     int count = 0;
-    for (int i = 0; i < MAXSTRLEN; i++) {
+    int i;
+    for (i = 0; i < MAXSTRLEN; i++) {
 
         char c = str[i]; 
 
