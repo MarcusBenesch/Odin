@@ -24,7 +24,7 @@ int writeline( int fd, const char *str ) {
 
         if(c != '\0')
         {
-            tmp = write(fd,"aaaa", 1);
+            tmp = write(fd,c, 1);
         }
         if(tmp == -1)
         {
