@@ -13,8 +13,8 @@ int readline( int fd, char *buf, int bufsz )
 {
     /* Maximum number of loop iterations in case things go bad. */
     char *temp[bufsz];
-    count = 0;
-    err = 1;
+    int count = 0;
+    int err = 1;
     int i;
     for (i = 0; i < bufsz-1; i++) {
         tmp = read(fd, *str, 1);
