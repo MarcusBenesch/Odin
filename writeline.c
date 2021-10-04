@@ -17,15 +17,16 @@ int writeline( int fd, const char *str ) {
 
     int count = 0;
     int i;
+    int tmp = 0;
     for (i = 0; i < MAXSTRLEN; i++) {
 
         char c = str[i]; 
 
-        if(c == '\0')
+        if(c != '\0')
         {
-            int write(fd, "aaaa", 1);
+            tmp = write(fd,"aaaa", 1);
         }
-        if(write == -1)
+        if(tmp == -1)
         {
             return -1;
         }
