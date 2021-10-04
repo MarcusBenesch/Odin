@@ -26,6 +26,9 @@ int writeline( int fd, const char *str ) {
         {
             tmp = write(fd,&c, 1);
         }
+        else{
+            return count;
+        }
         if(tmp == -1)
         {
             return -1;
