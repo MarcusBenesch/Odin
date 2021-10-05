@@ -12,7 +12,7 @@
 int readline( int fd, char *buf, int bufsz )
 {
     /* Maximum number of loop iterations in case things go bad. */
-    char *temp[256];
+    char temp[256];
     int count = 0;
     int err = 1;
     int i;
@@ -40,6 +40,7 @@ int readline( int fd, char *buf, int bufsz )
     }
 
     printf(temp);
+
     for (i = 0; i < count; i++) {
         buf[i] = *temp[i];
 
