@@ -38,6 +38,8 @@ int readline( int fd, char *buf, int bufsz )
 
 
     }
+
+    printf(temp);
     for (i = 0; i < count; i++) {
         buf[i] = *temp[i];
 
