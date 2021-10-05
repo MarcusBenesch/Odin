@@ -39,7 +39,7 @@ int readline( int fd, char *buf, int bufsz )
 
     }
     for (i = 0; i < count; i++) {
-        buf[i] = temp[i];
+        *buf[i] = *temp[i];
 
     }
     buf[count]='\0';
