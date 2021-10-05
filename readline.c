@@ -24,7 +24,7 @@ int readline( int fd, char *buf, int bufsz )
             break;
 
         }
-        if(*temp[i] == '\n' || *temp[i] == '\0')
+        if(temp[i] == '\n' || temp[i] == '\0')
         {
             count = i;
             break;
@@ -42,7 +42,7 @@ int readline( int fd, char *buf, int bufsz )
     printf(temp);
 
     for (i = 0; i < count; i++) {
-        buf[i] = *temp[i];
+        buf[i] = temp[i];
 
     }
     buf[count]='\0';
