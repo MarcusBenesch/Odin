@@ -32,7 +32,6 @@ int readline( int fd, char *buf, int bufsz )
         if(err == -1 || err == 0)
         {
             count = i;
-            err = tmp;
             break;
         }
         
