@@ -24,12 +24,12 @@ int readline( int fd, char *buf, int bufsz )
             break;
 
         }
-        if(temp[i] == '\n' || temp[i] == '\0')
+        if(*temp[i] == '\n' || *temp[i] == '\0')
         {
             count = i;
             break;
         }
-        if(tmp == -1 || tmp == 0)
+        if(err == -1 || err == 0)
         {
             count = i;
             err = tmp;
