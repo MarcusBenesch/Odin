@@ -16,8 +16,14 @@ int readline( int fd, char *buf, int bufsz )
     int count = 0;
     int err = 1;
     int i;
-    for (i = 0; i < bufsz-1; i < 255; i++) {
-        tmp = read(fd, *str, 1);
+    for (i = 0; i < 255; i++) {
+        tmp = read(fd, *temp, 1);
+        if(i = bufsz -1)
+        {
+            count = i;
+            break;
+
+        }
         if(temp[i] == '\n' || temp[i] == '\0')
         {
             count = i;
@@ -37,7 +43,7 @@ int readline( int fd, char *buf, int bufsz )
         buf[i] = temp[i];
 
     }
-    buff[count]='\0';
+    buf[count]='\0';
 
     if(err<1)
     {
