@@ -17,8 +17,8 @@ int readline( int fd, char *buf, int bufsz )
     int err = 1;
     int i;
     for (i = 0; i < 255; i++) {
-        tmp = read(fd, *temp, 1);
-        if(i = bufsz -1)
+        err = read(fd, *temp, 1);
+        if(i == bufsz -1)
         {
             count = i;
             break;
