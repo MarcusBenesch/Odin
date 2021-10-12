@@ -13,7 +13,7 @@ int main( int argc, char *argv[] ) {
 
 
 if( argc != 2 ) {
-      printf("ERROR: Usage: accesscheck <pathname>");
+      printf("ERROR: Usage: accesscheck <pathname>\n");
    }
 
 else{
