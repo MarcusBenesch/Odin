@@ -30,19 +30,19 @@ else{
     }
     r = access( argv[1], R_OK);
     printf("R_OK = %d\n", r);
-    if(f != 0)
+    if(r != 0)
     {
         printf("\tERROR: %s (errno = %d)\n", strerror(errno), errno);
     }
     w = access( argv[1], W_OK);
     printf("W_OK = %d\n", w);
-    if(f != 0)
+    if(w != 0)
     {
         printf("\tERROR: %s (errno = %d)\n", strerror(errno), errno);
     }
     x = access( argv[1], X_OK);
     printf("X_OK = %d\n", x);
-    if(f != 0)
+    if(x != 0)
     {
         printf("\tERROR: %s (errno = %d)\n", strerror(errno), errno);
     }
