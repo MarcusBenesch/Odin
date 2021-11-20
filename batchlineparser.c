@@ -58,14 +58,14 @@ int readline(int fd, char *buf, int bufsz)
 int main(void)
 {
 
-
+    printf(">> ");
     char input[256];
 
 
     while (1)
     {
 
-        printf(">> ");
+        
 
         int bytes_read;
         bytes_read = readline(0, &input[0], 256);
@@ -174,6 +174,7 @@ int main(void)
         {
             printf("readline(): Returned with code = %d\n", bytes_read);
         }
+        printf(">> ");
     }
 
     return (EXIT_SUCCESS);
