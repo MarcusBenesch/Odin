@@ -321,10 +321,11 @@ int main(void)
                     //printf("debug1\n");
                     //printf("Sim Com 1 = %s", cmd);
                     int bool = findPath(cmd, path1);
+                    printf("path = %s\n", path1);
                     if (bool == 0)
                     {
                         argsOfSM[argCount] = (char *)0;
-                        forkFunc(cmd, argsOfSM);
+                        forkFunc(path1, argsOfSM);
                         printf("string = %s", path1);
                         
                     }
