@@ -7,7 +7,7 @@
 
 
 #include <sys/types.h>
-int forkFunc( const char *str, char *args[])
+int forkFunc( void)
 {
     pid_t parent = getpid();
     pid_t pid = fork();
