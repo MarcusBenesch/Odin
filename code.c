@@ -11,6 +11,7 @@ int forkFunc()
 {
     pid_t parent = getpid();
     pid_t pid = fork();
+    printf("test\n")
 
     if (pid == -1)
     {
@@ -20,13 +21,13 @@ int forkFunc()
     else if (pid > 0)
     {
         int status;
-        printf("I am parent");
+        printf("I am parent\n");
         waitpid(pid, &status, 0);
     }
     else
     {
         // we are the child
-        printf("I am child");
+        printf("I am child\n");
         _exit(EXIT_FAILURE); // exec never returns
     }
 }
