@@ -50,6 +50,7 @@ int main(void)
 {
     char path1[90];
     int bool = findPath("ls", path1);
+    printf("//////////////////////////////");
     int bool2 = findPath("ls", path1);
 
     printf("first = %d, second = %d\n", bool, bool2);
