@@ -12,12 +12,11 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 /*#include"csci4500utils.h"*/
-
 int findPath(const char *str, char *buf)
 {
 char *path = NULL;
     char *tok;         
-    char *delim = ";";
+    char *delim = ":";
     int count = 0;
     int x;
 
@@ -25,6 +24,7 @@ char *path = NULL;
 
     if( path != NULL ) {   
         x = access( str, X_OK); 
+        char temp[1000];
         if(x == 0)
         {
             strcpy(buf, str);
@@ -33,9 +33,9 @@ char *path = NULL;
         else{
         for( tok = strtok( path, delim ); tok != NULL;  tok = strtok( NULL, delim ) ) {
 
-            char temp[90];
+            
             strcpy(temp, tok);
-            strcat(temp, "\\");
+            strcat(temp, "/");
             strcat(temp, str);
             x = access( temp, X_OK); 
             if(x == 0)
@@ -49,7 +49,6 @@ char *path = NULL;
     }
     return 1;
 }
-
 int writestring( int fd, const char *str ) {
   
   /* Maximum number of loop iterations in case things go bad. */
@@ -292,7 +291,7 @@ int main(void)
                     
                     printf("Sim Com 1 = %s", cmd);
                     
-                    findPath(sm, &path1[0]);
+                    findPath(sm, path1);
                     printf("\n///////////////////////////////////////////////////\n");
                     //printf("%s", path1);
                     sprintf(tempString, "\n\n");
