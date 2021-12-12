@@ -49,7 +49,7 @@ int main(void)
 
     char path1[90];
     
-    int bool = findPath("cd", path1);
+    int bool = findPath("echo", path1);
     int bool2 = findPath("ls", path1);
 
     printf("first = %d, second = %d\n", bool, bool2);
