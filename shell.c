@@ -322,13 +322,14 @@ int main(void)
                     char path1[90];
                     //printf("debug1\n");
                     printf("Sim Com 1 = %s\n", cmd);
+                    printf("path1 = %s", path1);
                     int bool = findPath(cmd, path1);
                     //printf("path = %s\n", path1);
                     if (bool == 0)
                     {
                         argsOfSM[argCount] = (char *)0;
                         forkFunc(path1, argsOfSM);
-                        path1=path2;
+                        (path1, "\0");
                         //printf("string = %s", path1);
                         
                     }
