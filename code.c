@@ -3,9 +3,8 @@
 #include <unistd.h>
 #include <string.h>
 
- #include <sys/wait.h>
+#include <sys/wait.h>
 #include <sys/types.h>
-
 
 int forkFunc()
 {
@@ -23,14 +22,12 @@ int forkFunc()
         int status;
         waitpid(pid, &status, 0);
         printf("I am parent\n");
-        
     }
     else
     {
-        // we are the child
-        printf("I am child\n");
-        char temp[0];
-        execve("/usr/bin/ls", temp, environ);
+        char *args[] = { "-l", "-a", (char *)0};
+        char *env_args[] = { (char *)0};
+        execve("/usr/bin/ls", args, env_args);
         _exit(EXIT_FAILURE); // exec never returns
     }
 }
