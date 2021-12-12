@@ -11,12 +11,12 @@ int forkFunc( const char *str, char *args[])
 {
     pid_t parent = getpid();
     pid_t pid = fork();
-    printf("test\n");
+    //printf("test\n");
 
     if (pid == -1)
     {
         // error, failed to fork()
-        printf("Failed");
+        //printf("Failed");
     }
     else if (pid > 0)
     {
@@ -28,6 +28,7 @@ int forkFunc( const char *str, char *args[])
     {
         
         char *env_args[] = { (char *)0};
+        printf("child")
         execve(str, args, env_args);
         _exit(EXIT_FAILURE); // exec never returns
     }
