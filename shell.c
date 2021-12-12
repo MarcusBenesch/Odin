@@ -208,6 +208,7 @@ int main(void)
 
     while (1)
     {
+        printf("%s", path);
         sprintf(tempString, ">> ");
 
         writestring( 1, tempString);
