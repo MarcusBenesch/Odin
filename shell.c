@@ -38,15 +38,15 @@ int forkFunc( const char *str, char *args[])
     }
 }
 
-int findPath(const char *str, char *buf)
+int findPath(char *path,const char *str, char *buf)
 {
-char *path = NULL;
+
     char *tok;         
     char *delim = ":";
     int count = 0;
     int x;
 
-    path = getenv( "PATH" );
+    
 
     if( path != NULL ) {   
         x = access( str, X_OK); 
@@ -64,8 +64,10 @@ char *path = NULL;
             strcat(temp, "/");
             strcat(temp, str);
             x = access( temp, X_OK); 
+            //printf("%s\n", temp);
             if(x == 0)
             {
+                //printf("\n%s\n", temp);
                 strcpy(buf, temp);
                 return 0;
             }        
@@ -199,6 +201,10 @@ int main(void)
 
     char input[256];
     char tempString[256];
+    char *path;
+    char * tp;
+    path = getenv( "PATH" );
+    strcpy(tp,path);
 
 
     while (1)
@@ -322,8 +328,9 @@ int main(void)
                     char path1[90];
                     //printf("debug1\n");
                     printf("Sim Com 1 = %s\n", cmd);
-                    printf("path1 = %s", path1);
-                    int bool = findPath(cmd, path1);
+                    //printf("path1 = %s", path1);
+                    int bool = findPath(tp,cmd, path1);
+                    strcpy(tp,path);
                     //printf("path = %s\n", path1);
                     if (bool == 0)
                     {
