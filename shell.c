@@ -247,6 +247,8 @@ int main(void)
             int c2;
             int temp = 0;
             int c3;
+            char path1[90];
+            char *cmd;
             //printf("debug\n");
 
             //printf("args\n");
@@ -271,6 +273,7 @@ int main(void)
                         //arguments
                         if(c3 ==0)
                         {
+                        cmd = sm;
                         sprintf(tempString, "      cmd = \"%s\"\n", sm);
                         writestring( 1, tempString);
                         }
@@ -287,8 +290,8 @@ int main(void)
                         writestring( 1, tempString);
                     }
                     
-                    printf("Sim Com 1 = %s", sm);
-                    //char path1[90];
+                    printf("Sim Com 1 = %s", cmd);
+                    
                     //findPath(sm, path1);
                     printf("\n///////////////////////////////////////////////////\n");
                     //printf("%s", path1);
