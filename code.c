@@ -9,7 +9,7 @@ int findPath(const char *str, char *buf)
 {
 char *path = NULL;
     char *tok;         
-    char *delim = ";";
+    char *delim = ":";
     int count = 0;
     int x =1;
 
