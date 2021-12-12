@@ -292,6 +292,7 @@ int main(void)
                         //writestring( 1, tempString);
                     }
                     char path1[90];
+                    printf("debug1\n");
                     printf("Sim Com 1 = %s", cmd);
                     int bool = findPath(cmd, path1);
                     if (bool == 0)
