@@ -48,6 +48,11 @@ int findPath(char *path,const char *str, char *buf)
 
 int main(void)
 {
+
+    x = access( "usr/bin/ls", X_OK); 
+    printf("x = %d\n", x);
+    x = access( "usr/bin/ls", X_OK); 
+    printf("x = %d\n", x);
     char path1[90];
     char *path = getenv( "PATH" );
     int bool = findPath(path, "ls", path1);
