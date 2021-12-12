@@ -9,6 +9,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <sys/wait.h>
+#include <sys/types.h
 /*#include"csci4500utils.h"*/
 
 int forkFunc( const char *str, char *args[])
