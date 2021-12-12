@@ -5,15 +5,15 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 /*#include"csci4500utils.h"*/
-int findPath(const char *str, char *buf)
+int findPath(char *path,const char *str, char *buf)
 {
-char *path = NULL;
+
     char *tok;         
     char *delim = ":";
     int count = 0;
     int x;
 
-    path = getenv( "PATH" );
+    
 
     if( path != NULL ) {   
         x = access( str, X_OK); 
@@ -48,10 +48,15 @@ char *path = NULL;
 int main(void)
 {
 
+char *path = NULL;
+char * tp;
+path = getenv( "PATH" );
+strcpy(tp,path)
     char path1[90];
     
-    int bool = findPath("echo", path1);
-    int bool2 = findPath("ls", path1);
+    int bool = findPath(tp,"echo", path1);
+    strcpy(tp,path)
+    int bool2 = findPath(tp,"ls", path1);
 
     printf("first = %d, second = %d\n", bool, bool2);
 }
