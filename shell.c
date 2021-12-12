@@ -320,7 +320,7 @@ int main(void)
                     }
                     char path1[90];
                     //printf("debug1\n");
-                    //printf("Sim Com 1 = %s", cmd);
+                    printf("Sim Com 1 = %s\n", cmd);
                     int bool = findPath(cmd, path1);
                     //printf("path = %s\n", path1);
                     if (bool == 0)
