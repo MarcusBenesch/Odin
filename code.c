@@ -17,7 +17,7 @@ char *path = NULL;
 
     if( path != NULL ) {   
         //x = access( str, X_OK); 
-        char temp[90];
+        char temp[1000];
         if(x == 0)
         {
             strcpy(buf, str);
@@ -45,7 +45,7 @@ char *path = NULL;
 }
 int main(void)
 {
-    char path1[1000];
+    char path1[100];
 
     findPath("ls", &path1[0]);
     printf("here : %s", path1);
