@@ -51,11 +51,11 @@ int main(void)
 char *path = NULL;
 char * tp;
 path = getenv( "PATH" );
-strcpy(tp,path)
+strcpy(tp,path);
     char path1[90];
     
     int bool = findPath(tp,"echo", path1);
-    strcpy(tp,path)
+    strcpy(tp,path);
     int bool2 = findPath(tp,"ls", path1);
 
     printf("first = %d, second = %d\n", bool, bool2);
