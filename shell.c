@@ -16,7 +16,7 @@ int forkFunc( const char *str, char *args[])
 {
     pid_t parent = getpid();
     pid_t pid = fork();
-    printf("test\n");
+    //printf("test\n");
 
     if (pid == -1)
     {
@@ -326,6 +326,7 @@ int main(void)
                     {
                         argsOfSM[argCount] = (char *)0;
                         forkFunc(path1, argsOfSM);
+                        strcpy(path1, "\0");
                         //printf("string = %s", path1);
                         
                     }
