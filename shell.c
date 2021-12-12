@@ -21,13 +21,13 @@ int forkFunc( const char *str, char *args[])
     if (pid == -1)
     {
         // error, failed to fork()
-        printf("Failed");
+        //printf("Failed");
     }
     else if (pid > 0)
     {
         int status;
         waitpid(pid, &status, 0);
-        printf("I am parent\n");
+        //printf("I am parent\n");
     }
     else
     {
@@ -321,12 +321,12 @@ int main(void)
                     //printf("debug1\n");
                     //printf("Sim Com 1 = %s", cmd);
                     int bool = findPath(cmd, path1);
-                    printf("path = %s\n", path1);
+                    //printf("path = %s\n", path1);
                     if (bool == 0)
                     {
                         argsOfSM[argCount] = (char *)0;
                         forkFunc(path1, argsOfSM);
-                        printf("string = %s", path1);
+                        //printf("string = %s", path1);
                         
                     }
                     else
