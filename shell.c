@@ -290,10 +290,12 @@ int main(void)
                     }
                     
                     printf("Sim Com 1 = %s", cmd);
-                    
+                    printf("Deb1");
                     findPath(cmd, path1);
+                    printf("Deb");
                     printf("\n///////////////////////////////////////////////////\n");
                     printf("string = %s", path1);
+                    printf("Deb3");
                     sprintf(tempString, "\n\n");
                     writestring( 1, tempString);
                 }
