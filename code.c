@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <unistd.h>
 #include <string.h>
 
 
@@ -11,12 +11,12 @@ char *path = NULL;
     char *tok;         
     char *delim = ":";
     int count = 0;
-    int x =1;
+    
 
     path = getenv( "PATH" );
 
     if( path != NULL ) {   
-        //x = access( str, X_OK); 
+        x = access( str, X_OK); 
         char temp[1000];
         if(x == 0)
         {
@@ -31,7 +31,7 @@ char *path = NULL;
             strcat(temp, "/");
             strcat(temp, str);
             printf("%s\n", temp);
-            //x = access( temp, X_OK); 
+            x = access( temp, X_OK); 
             if(x == 0)
             {
                 strcpy(buf, temp);
