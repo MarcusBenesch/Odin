@@ -37,7 +37,7 @@ int main(void)
     forkFunc("/usr/bin/ls", args);
 
    args[0] = "";
-   args[1] = (char *)0};
+   args[1] = (char *)0;
     forkFunc("/usr/bin/ls", args);
     return 0;
 }
