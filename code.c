@@ -37,6 +37,6 @@ int main(void)
 
     forkFunc("/usr/bin/ls", args);
     char *args2[] = { (char *)0};
-    forkFunc("usr/bin/ab", args2)
+    forkFunc("usr/bin/ab", args2);
     return 0;
 }
