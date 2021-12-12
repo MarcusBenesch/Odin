@@ -276,6 +276,7 @@ int main(void)
             int argCount = 1;
             char *argsOfSM[10];
             argsOfSM[0] = "a";
+            char path2[90];
             //printf("debug\n");
 
             //printf("args\n");
@@ -327,7 +328,7 @@ int main(void)
                     {
                         argsOfSM[argCount] = (char *)0;
                         forkFunc(path1, argsOfSM);
-                        strcpy(path1, "\0");
+                        path1=path2;
                         //printf("string = %s", path1);
                         
                     }
