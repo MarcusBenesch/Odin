@@ -7,7 +7,7 @@
 /*#include"csci4500utils.h"*/
 int findPath(const char *path,const char *str, char *buf)
 {
-char *path = NULL;
+
     char *tok;         
     char *delim = ":";
     int count = 0;
