@@ -21,8 +21,9 @@ int forkFunc()
     else if (pid > 0)
     {
         int status;
-        printf("I am parent\n");
         waitpid(pid, &status, 0);
+        printf("I am parent\n");
+        
     }
     else
     {
