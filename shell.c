@@ -294,7 +294,7 @@ int main(void)
                     
                     findPath(sm, path1);
                     printf("\n///////////////////////////////////////////////////\n");
-                    printf("%s", path1);
+                    //printf("%s", path1);
                     sprintf(tempString, "\n\n");
                     writestring( 1, tempString);
                 }
