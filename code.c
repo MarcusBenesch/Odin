@@ -5,38 +5,47 @@
 
 #include <sys/wait.h>
 #include <sys/types.h>
-
-int forkFunc( const char *str, char *args[])
+int findPath(const char *str, char *buf)
 {
-    pid_t parent = getpid();
-    pid_t pid = fork();
-    printf("test\n");
+char *path = NULL;
+    char *tok;         
+    char *delim = ";";
+    int count = 0;
+    int x;
 
-    if (pid == -1)
-    {
-        // error, failed to fork()
-        printf("Failed");
+    path = getenv( "PATH" );
+
+    if( path != NULL ) {   
+        x = access( str, X_OK); 
+        if(x == 0)
+        {
+            strcpy(buf, str);
+                return 0;
+        } 
+        else{
+        for( tok = strtok( path, delim ); tok != NULL;  tok = strtok( NULL, delim ) ) {
+
+            char temp[90];
+            strcpy(temp, tok);
+            strcat(temp, "\\");
+            strcat(temp, str);
+            x = access( temp, X_OK); 
+            if(x == 0)
+            {
+                strcpy(buf, temp);
+                return 0;
+            }        
+            count ++;
+        }
+        }
     }
-    else if (pid > 0)
-    {
-        int status;
-        waitpid(pid, &status, 0);
-        printf("I am parent\n");
-    }
-    else
-    {
-        
-        char *env_args[] = { (char *)0};
-        execve(str, args, env_args);
-        _exit(EXIT_FAILURE); // exec never returns
-    }
+    return 1;
 }
 int main(void)
 {
-    char *args[] = { "-l", "-a", (char *)0};
+    char path1[90];
 
-    forkFunc("/usr/bin/ls", args);
-    char *args2[] = {"", (char *)0};
-    forkFunc("usr/bin/ab", args2);
+    findPath("ls", path1);
+    printf("%s", path1);
     return 0;
 }
