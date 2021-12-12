@@ -5,7 +5,7 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 /*#include"csci4500utils.h"*/
-int findPath(const char *path,const char *str, char *buf)
+int findPath(char *path,const char *str, char *buf)
 {
 
     char *tok;         
