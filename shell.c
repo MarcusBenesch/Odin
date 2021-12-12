@@ -275,6 +275,7 @@ int main(void)
             char *cmd;
             int argCount = 1;
             char *argsOfSM[10];
+            argsOfSM[0] = "a";
             //printf("debug\n");
 
             //printf("args\n");
