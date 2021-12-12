@@ -188,7 +188,7 @@ int main(void)
         {
 
             sprintf(tempString, "readline(): Got: \"%s\" (rval = %d)\n\n", input, bytes_read);
-            writestring( 1, tempString);
+            //writestring( 1, tempString);
             char *delims = ";";
             char *tokens[10];
             int i;
@@ -247,6 +247,8 @@ int main(void)
             int temp = 0;
             int c3;
             char *cmd;
+            int argCount = 0;
+            char *argsOfSM[10];
             //printf("debug\n");
 
             //printf("args\n");
@@ -256,14 +258,14 @@ int main(void)
 
                 ///jobs
                 sprintf(tempString, "Job #%d: \"%s\"\n", c1, jobs[c1]);
-                writestring( 1, tempString);
+                //writestring( 1, tempString);
                 sprintf(tempString, "   seqops[] = [ %s ]\n", ops[c1]);
-                writestring( 1, tempString);
+                //writestring( 1, tempString);
                 for (c2 = 0; c2 <= count[temp]; c2++)
                 {
                     //simple commands
                     sprintf(tempString, "   Simple Command #%d = \"%s\"\n", c2, simCom[c1][c2]);
-                    writestring( 1, tempString);
+                    //writestring( 1, tempString);
                     for (c3 = 0, sm = strtok(commands[c1][c2], delims); sm != NULL && c3 < 10;
                          sm = strtok(NULL, delims), c3++)
                     {
@@ -272,12 +274,14 @@ int main(void)
                         if(c3 ==0)
                         {
                         cmd = sm;
-                        sprintf(tempString, "      cmd = \"%s\"\n", sm);
-                        writestring( 1, tempString);
+                        //sprintf(tempString, "      cmd = \"%s\"\n", sm);
+                        //writestring( 1, tempString);
                         }
                         else{
+                            argsOfSM[argCount] = sm;
+                            argCount++;
                             sprintf(tempString, "      arg[%d] = \"%s\"\n", c3-1, sm);
-                            writestring( 1, tempString);
+                            //writestring( 1, tempString);
                         }
                         //sma[c1][c2][c3] = sm;
                         //printf("%s\n", sma[c1][c2][c3]);
@@ -285,17 +289,25 @@ int main(void)
                     if(c3 ==1)
                     {
                         sprintf(tempString, "      args = (None supplied)");
-                        writestring( 1, tempString);
+                        //writestring( 1, tempString);
                     }
                     char path1[90];
                     printf("Sim Com 1 = %s", cmd);
-                    findPath(cmd, path1);
-                    printf("string = %s", path1);
+                    int bool = findPath(cmd, path1);
+                    if (bool == 0)
+                    {
+                        printf("string = %s", path1);
+                    }
+                    else
+                    {
+                        sprintf(tempString,"Command: %s not found", cmd);
+                        writestring( 1, tempString);
+                    }
 
 
-                    printf("\n///////////////////////////////////////////////////\n");
-                    sprintf(tempString, "\n\n");
-                    writestring( 1, tempString);
+                    //printf("\n///////////////////////////////////////////////////\n");
+                    //sprintf(tempString, "\n\n");
+                    //writestring( 1, tempString);
                     
                 }
                 temp++;
