@@ -31,7 +31,7 @@ int forkFunc( const char *str, char *args[])
         execve("ls", args, env_args);
         
         printf("child");
-        execve("ls", _args, env_args);
+        //execve("ls", _args, env_args);
         //_exit(EXIT_FAILURE); // exec never returns
     }
 }
