@@ -202,10 +202,9 @@ int main(void)
     char input[256];
     char tempString[256];
     char *path;
-    char * tp;
+    
     path = getenv( "PATH" );
-    strcpy(tp,path);
-
+    
 
     while (1)
     {
