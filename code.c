@@ -24,6 +24,7 @@ char *path = NULL;
                 return 0;
         } 
         else{
+            printf("path = %s\n", path);
         for( tok = strtok( path, delim ); tok != NULL;  tok = strtok( NULL, delim ) ) {
 
             
