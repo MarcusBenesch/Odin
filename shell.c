@@ -246,7 +246,6 @@ int main(void)
             int c2;
             int temp = 0;
             int c3;
-            char path1[90];
             char *cmd;
             //printf("debug\n");
 
@@ -288,14 +287,12 @@ int main(void)
                         sprintf(tempString, "      args = (None supplied)");
                         writestring( 1, tempString);
                     }
-                    
+                    char path1[90];
                     printf("Sim Com 1 = %s", cmd);
-                    printf("Deb1");
                     findPath(cmd, path1);
-                    printf("Deb2");
                     printf("string = %s", path1);
 
-                    
+
                     printf("\n///////////////////////////////////////////////////\n");
                     sprintf(tempString, "\n\n");
                     writestring( 1, tempString);
