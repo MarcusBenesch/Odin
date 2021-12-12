@@ -32,9 +32,10 @@ char *path = NULL;
             strcat(temp, str);
             printf("s = %s\n", temp );
             x = access( temp, X_OK); 
+            printf("x = %d\n", x);
             if(x == 0)
             {   
-                printf("x = %s\n", temp );
+                
                 strcpy(buf, temp);
                 return 0;
             }        
