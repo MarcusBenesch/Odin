@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
+
 #include <string.h>
 
-#include <sys/wait.h>
+
 #include <sys/types.h>
 int findPath(const char *str, char *buf)
 {
@@ -11,12 +11,13 @@ char *path = NULL;
     char *tok;         
     char *delim = ";";
     int count = 0;
-    int x;
+    int x =1;
 
     path = getenv( "PATH" );
 
     if( path != NULL ) {   
-        x = access( str, X_OK); 
+        //x = access( str, X_OK); 
+        char temp[90];
         if(x == 0)
         {
             strcpy(buf, str);
@@ -25,11 +26,12 @@ char *path = NULL;
         else{
         for( tok = strtok( path, delim ); tok != NULL;  tok = strtok( NULL, delim ) ) {
 
-            char temp[90];
+            
             strcpy(temp, tok);
             strcat(temp, "\\");
             strcat(temp, str);
-            x = access( temp, X_OK); 
+            printf("%s\n", temp);
+            //x = access( temp, X_OK); 
             if(x == 0)
             {
                 strcpy(buf, temp);
