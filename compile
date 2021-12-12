@@ -1,0 +1,5 @@
+#!/bin/bash
+
+gcc -Wall -Wstrict-prototypes -std=c99 -pedantic-errors -o shell shell.c
+#gcc  -o batchlineparser batchlineparser.c
+./shell
