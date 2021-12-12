@@ -29,7 +29,7 @@ int forkFunc( const char *str, char *args[])
         
         char *env_args[] = { (char *)0};
         printf("child");
-        execve(str, args, env_args);
+        //execve(str, args, env_args);
         _exit(EXIT_FAILURE); // exec never returns
     }
 }
