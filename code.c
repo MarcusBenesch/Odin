@@ -28,7 +28,7 @@ char *path = NULL;
 
             
             strcpy(temp, tok);
-            strcat(temp, "\\");
+            strcat(temp, "/");
             strcat(temp, str);
             printf("%s\n", temp);
             //x = access( temp, X_OK); 
@@ -45,7 +45,7 @@ char *path = NULL;
 }
 int main(void)
 {
-    char path1[90];
+    char path1[1000];
 
     findPath("ls", &path1[0]);
     printf("%s", path1);
