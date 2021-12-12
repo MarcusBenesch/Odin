@@ -294,12 +294,12 @@ int main(void)
                     findPath(cmd, path1);
                     printf("Deb2");
                     printf("string = %s", path1);
-                    printf("\n///////////////////////////////////////////////////\n");
+
                     
-                    printf("Deb3");
+                    printf("\n///////////////////////////////////////////////////\n");
                     sprintf(tempString, "\n\n");
                     writestring( 1, tempString);
-                    printf("Deb3");
+                    
                 }
                 temp++;
 
