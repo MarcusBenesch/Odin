@@ -4,10 +4,8 @@
 #include <string.h>
 #include <sys/wait.h>
 #include <sys/types.h>
-
-
-#include <sys/types.h>
-int forkFunc( void)
+/*#include"csci4500utils.h"*/
+int forkFunc( const char *str, char *args[])
 {
     pid_t parent = getpid();
     pid_t pid = fork();
@@ -22,20 +20,20 @@ int forkFunc( void)
     {
         int status;
         waitpid(pid, &status, 0);
-        printf("I am parent\n");
+        //printf("I am parent\n");
     }
     else
     {
-        char *args[] = {"-l", "-a", (char *)0};
-        char *env_args[] = {(char*)0};
-        execve("/usr/bin/ls", args, env_args);
-        printf("child");
-        //execve("ls", _args, env_args);
+        
+        char *env_args[] = { (char *)0};
+        execve(str, args, env_args);
         _exit(EXIT_FAILURE); // exec never returns
     }
 }
+
 int main(void)
 {
-    forkFunc();
+    char *args[] = {"-l", "-a", (char *)0};
+    forkFunc("usr/bin/ls", args);
     return 0;
 }
