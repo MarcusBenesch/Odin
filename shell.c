@@ -329,7 +329,7 @@ int main(void)
                     //printf("debug1\n");
                     printf("Sim Com 1 = %s\n", cmd);
                     //printf("path1 = %s", path1);
-                    //int bool = findPath(tp,cmd, path1);
+                    int bool = 1;//findPath(tp,cmd, path1);
                     //strcpy(tp,path);
                     //printf("path = %s\n", path1);
                     if (bool == 0)
