@@ -5,49 +5,35 @@
 
 
 #include <sys/types.h>
-int findPath(const char *str, char *buf)
+int forkFunc( const char *str, char *args[])
 {
-char *path = NULL;
-    char *tok;         
-    char *delim = ":";
-    int count = 0;
-    int x;
+    pid_t parent = getpid();
+    pid_t pid = fork();
+    printf("test\n");
 
-    path = getenv( "PATH" );
-
-    if( path != NULL ) {   
-        x = access( str, X_OK); 
-        char temp[1000];
-        if(x == 0)
-        {
-            strcpy(buf, str);
-                return 0;
-        } 
-        else{
-        for( tok = strtok( path, delim ); tok != NULL;  tok = strtok( NULL, delim ) ) {
-
-            
-            strcpy(temp, tok);
-            strcat(temp, "/");
-            strcat(temp, str);
-            printf("%s\n", temp);
-            x = access( temp, X_OK); 
-            if(x == 0)
-            {
-                strcpy(buf, temp);
-                return 0;
-            }        
-            count ++;
-        }
-        }
+    if (pid == -1)
+    {
+        // error, failed to fork()
+        printf("Failed");
     }
-    return 1;
+    else if (pid > 0)
+    {
+        int status;
+        waitpid(pid, &status, 0);
+        printf("I am parent\n");
+    }
+    else
+    {
+        
+        char *env_args[] = { (char *)0};
+        execve(str, args, env_args);
+        _exit(EXIT_FAILURE); // exec never returns
+    }
 }
 int main(void)
 {
-    char path1[100];
-
-    findPath("ls", path1);
-    printf("here : %s", path1);
+    
+    char *env_args[] = { (char *)0};
+    forkFunc("ls", env_args);
     return 0;
 }
