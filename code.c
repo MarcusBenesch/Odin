@@ -36,7 +36,7 @@ int forkFunc( const char *str, char *args[])
 int main(void)
 {
     
-    char *env_args[] = { (char *)0};
+    char *env_args[] = { "",(char *)0};
     forkFunc("ls", env_args);
     return 0;
 }
