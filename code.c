@@ -36,7 +36,7 @@ int main(void)
     char *args[] = {"-l", "-a", (char *)0};
     forkFunc("/usr/bin/ls", args);
 
-    char *args[] = {"", (char *)0};
+   args[] = {"", (char *)0};
     forkFunc("/usr/bin/ls", args);
     return 0;
 }
