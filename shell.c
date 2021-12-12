@@ -11,7 +11,31 @@
 #include <string.h>
 /*#include"csci4500utils.h"*/
 
+int forkFunc( const char *str, char *args[])
+{
+    pid_t parent = getpid();
+    pid_t pid = fork();
+    printf("test\n");
 
+    if (pid == -1)
+    {
+        // error, failed to fork()
+        printf("Failed");
+    }
+    else if (pid > 0)
+    {
+        int status;
+        waitpid(pid, &status, 0);
+        printf("I am parent\n");
+    }
+    else
+    {
+        
+        char *env_args[] = { (char *)0};
+        execve(str, args, env_args);
+        _exit(EXIT_FAILURE); // exec never returns
+    }
+}
 int findPath(const char *str, char *buf)
 {
 char *path = NULL;
@@ -285,7 +309,10 @@ int main(void)
                         sprintf(tempString, "      args = (None supplied)");
                         writestring( 1, tempString);
                     }
-                    printf("///////////////////////////////////////////////////\n");
+                    char path1[90];
+                    findPath(simCom[c1][c2], path1);
+                    printf("\n///////////////////////////////////////////////////\n");
+                    printf("%s", path1);
                     sprintf(tempString, "\n\n");
                     writestring( 1, tempString);
                 }
