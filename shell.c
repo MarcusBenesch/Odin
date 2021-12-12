@@ -273,7 +273,7 @@ int main(void)
             int temp = 0;
             int c3;
             char *cmd;
-            int argCount = 0;
+            int argCount = 1;
             char *argsOfSM[10];
             //printf("debug\n");
 
