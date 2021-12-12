@@ -30,9 +30,10 @@ char *path = NULL;
             strcpy(temp, tok);
             strcat(temp, "/");
             strcat(temp, str);
+            printf("s = %s\n", temp );
             x = access( temp, X_OK); 
             if(x == 0)
-            {
+            {   
                 strcpy(buf, temp);
                 return 0;
             }        
@@ -49,5 +50,5 @@ int main(void)
     int bool = findPath("ls", path1);
     int bool2 = findPath("ls", path1);
 
-    printf("first = %d, second = %d", bool, bool2);
+    printf("first = %d, second = %d\n", bool, bool2);
 }
