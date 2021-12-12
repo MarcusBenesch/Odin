@@ -11,7 +11,7 @@ char *path = NULL;
     char *tok;         
     char *delim = ":";
     int count = 0;
-    
+    int x;
 
     path = getenv( "PATH" );
 
