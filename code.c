@@ -48,6 +48,6 @@ int main(void)
     char path1[1000];
 
     findPath("ls", &path1[0]);
-    printf("%s", path1);
+    printf("here : %s", path1);
     return 0;
 }
