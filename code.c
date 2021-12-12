@@ -11,7 +11,7 @@ int forkFunc()
 {
     pid_t parent = getpid();
     pid_t pid = fork();
-    printf("test\n")
+    printf("test\n");
 
     if (pid == -1)
     {
