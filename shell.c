@@ -286,9 +286,9 @@ int main(void)
                         sprintf(tempString, "      args = (None supplied)");
                         writestring( 1, tempString);
                     }
-                    char path1[90];
+                    //char path1[90];
                     printf("Sim Com 1 = %s", simCom[c1][c2]);
-                    findPath(simCom[c1][c2], path1);
+                    //findPath(simCom[c1][c2], path1);
                     printf("\n///////////////////////////////////////////////////\n");
                     printf("%s", path1);
                     sprintf(tempString, "\n\n");
