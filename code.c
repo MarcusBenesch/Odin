@@ -49,7 +49,7 @@ int findPath(char *path,const char *str, char *buf)
 int main(void)
 {
 
-    x = access( "usr/bin/ls", X_OK); 
+    int x = access( "usr/bin/ls", X_OK); 
     printf("x = %d\n", x);
     x = access( "usr/bin/ls", X_OK); 
     printf("x = %d\n", x);
