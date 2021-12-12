@@ -37,7 +37,7 @@ int findPath(char *path,const char *str, char *buf)
             {   
                 
                 strcpy(buf, temp);
-                //return 0;
+                return 0;
             }        
             count ++;
         }
