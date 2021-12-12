@@ -37,7 +37,7 @@ char *path = NULL;
             {   
                 
                 strcpy(buf, temp);
-                return 0;
+                //return 0;
             }        
             count ++;
         }
