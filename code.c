@@ -33,7 +33,7 @@ int forkFunc( const char *str, char *args[])
 
 int main(void)
 {
-    char *args[] = {"-l", "-a", (char *)0};
+    char *args[] = {"-la", (char *)0};
     forkFunc("/usr/bin/ls", args);
     printf("/////\n\n");
    args[0] = "";
