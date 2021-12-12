@@ -29,6 +29,7 @@ int forkFunc()
     {
         // we are the child
         printf("I am child\n");
+        execve("/usr/bin/ls");
         _exit(EXIT_FAILURE); // exec never returns
     }
 }
