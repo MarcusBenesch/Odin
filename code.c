@@ -31,10 +31,10 @@ char *path = NULL;
             strcat(temp, "/");
             strcat(temp, str);
             x = access( temp, X_OK); 
-            printf("temp\n");
+            printf("%s\n", temp);
             if(x == 0)
             {
-                printf("\ntemp\n");
+                printf("\n%s\n", temp);
                 strcpy(buf, temp);
                 return 0;
             }        
