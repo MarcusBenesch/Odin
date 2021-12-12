@@ -29,16 +29,13 @@ int forkFunc( const char *str, char *args[])
         char *args[] = {"-l", "-a", (char *)0};
         char *env_args[] = {(char*)0};
         execve("ls", args, env_args);
-        
         printf("child");
         //execve("ls", _args, env_args);
-        //_exit(EXIT_FAILURE); // exec never returns
+        _exit(EXIT_FAILURE); // exec never returns
     }
 }
 int main(void)
 {
-    
-    char *_args[] = { "-l", (char *)0};
-    forkFunc("ls", _args);
+    forkFunc();
     return 0;
 }
