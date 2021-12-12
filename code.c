@@ -47,7 +47,7 @@ int main(void)
 {
     char path1[100];
 
-    findPath("ls", &path1[0]);
+    findPath("ls", path1);
     printf("here : %s", path1);
     return 0;
 }
