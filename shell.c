@@ -290,7 +290,7 @@ int main(void)
                     printf("Sim Com 1 = %s", simCom[c1][c2]);
                     //findPath(simCom[c1][c2], path1);
                     printf("\n///////////////////////////////////////////////////\n");
-                    printf("%s", path1);
+                    //printf("%s", path1);
                     sprintf(tempString, "\n\n");
                     writestring( 1, tempString);
                 }
