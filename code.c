@@ -34,6 +34,9 @@ int forkFunc( const char *str, char *args[])
 int main(void)
 {
     char *args[] = {"-l", "-a", (char *)0};
-    forkFunc("usr/bin/ls", args);
+    forkFunc("/usr/bin/ls", args);
+
+    char *args[] = {"", (char *)0};
+    forkFunc("/usr/bin/ls", args);
     return 0;
 }
