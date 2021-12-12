@@ -6,7 +6,7 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 
-int forkFunc()
+int forkFunc( const char *str, char *args[])
 {
     pid_t parent = getpid();
     pid_t pid = fork();
@@ -25,7 +25,7 @@ int forkFunc()
     }
     else
     {
-        char *args[] = { "-l", "-a", (char *)0};
+        
         char *env_args[] = { (char *)0};
         execve("/usr/bin/ls", args, env_args);
         _exit(EXIT_FAILURE); // exec never returns
@@ -33,7 +33,10 @@ int forkFunc()
 }
 int main(void)
 {
+    char *args[] = { "-l", "-a", (char *)0};
 
-    forkFunc();
+    forkFunc("/usr/bin/ls", args);
+    char *args2[] = { (char *)0};
+    forkFunc("usr/bin/ab", args2)
     return 0;
 }
