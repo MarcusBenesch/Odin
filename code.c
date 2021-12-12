@@ -34,6 +34,7 @@ char *path = NULL;
             x = access( temp, X_OK); 
             if(x == 0)
             {   
+                printf("x = %s\n", temp );
                 strcpy(buf, temp);
                 return 0;
             }        
