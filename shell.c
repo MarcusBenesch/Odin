@@ -196,7 +196,7 @@ int main(void)
     char input[256];
     char tempString[256];
     char *path = getenv("PATH");
-
+    int bytes_read;
     char tp[1000];
 
     printf("%s", path);
@@ -208,7 +208,7 @@ int main(void)
 
         writestring(1, tempString);
 
-        int bytes_read;
+        
         bytes_read = readline(0, &input[0], 256);
 
         if (bytes_read > 0)
