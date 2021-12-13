@@ -351,7 +351,7 @@ int main(void)
                         sprintf(tempString,"Command: %s not found", cmd);
                         writestring( 1, tempString);
                     }
-                    argsOfSM = 1;
+                    argCount = 1;
 
                     //printf("\n///////////////////////////////////////////////////\n");
                     //sprintf(tempString, "\n\n");
