@@ -12,7 +12,7 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 /*#include"csci4500utils.h"*/
-int forkFunc( const char *str, char *args[])
+int forkFunc(const char *str, char *args[])
 {
     /*pid_t parent = getpid();*/
     pid_t pid = fork();
@@ -31,124 +31,121 @@ int forkFunc( const char *str, char *args[])
     }
     else
     {
-        
-        char *env_args[] = { (char *)0};
+
+        char *env_args[] = {(char *)0};
         execve(str, args, env_args);
-        _exit(EXIT_FAILURE); 
+        _exit(EXIT_FAILURE);
     }
 }
 
-int findPath(char *path,const char *str, char *buf)
+int findPath(char *path, const char *str, char *buf)
 {
 
-    char *tok;         
+    char *tok;
     char *delim = ":";
     int count = 0;
     int x;
     char temp[1000];
-    
 
-    if( path != NULL ) {   
-        x = access( str, X_OK); 
-        
-        if(x == 0)
+    if (path != NULL)
+    {
+        x = access(str, X_OK);
+
+        if (x == 0)
         {
             strcpy(buf, str);
-                return 0;
-        } 
-        else{
-        for( tok = strtok( path, delim ); tok != NULL;  tok = strtok( NULL, delim ) ) {
-
-            
-            strcpy(temp, tok);
-            strcat(temp, "/");
-            strcat(temp, str);
-            x = access( temp, X_OK); 
-            /*printf("%s\n", temp);*/
-            if(x == 0)
-            {
-                /*printf("\n%s\n", temp);*/
-                strcpy(buf, temp);
-                return 0;
-            }        
-            count ++;
+            return 0;
         }
+        else
+        {
+            for (tok = strtok(path, delim); tok != NULL; tok = strtok(NULL, delim))
+            {
+
+                strcpy(temp, tok);
+                strcat(temp, "/");
+                strcat(temp, str);
+                x = access(temp, X_OK);
+                /*printf("%s\n", temp);*/
+                if (x == 0)
+                {
+                    /*printf("\n%s\n", temp);*/
+                    strcpy(buf, temp);
+                    return 0;
+                }
+                count++;
+            }
         }
     }
     return 1;
 }
-int writestring( int fd, const char *str ) {
-  
-  /* Maximum number of loop iterations in case things go bad. */
-  const size_t MAXSTRLEN = 256;
+int writestring(int fd, const char *str)
+{
+
+    /* Maximum number of loop iterations in case things go bad. */
+    const size_t MAXSTRLEN = 256;
 
     int count = 0;
     int i;
     int tmp = 0;
     /*char end = '\n';*/
-    for (i = 0; i < MAXSTRLEN; i++) {
+    for (i = 0; i < MAXSTRLEN; i++)
+    {
 
-        char c = str[i]; 
-  
-        if(c != '\0')
+        char c = str[i];
+
+        if (c != '\0')
         {
-            tmp = write(fd,&c, 1);
+            tmp = write(fd, &c, 1);
         }
-        else{
+        else
+        {
 
             /*tmp = write(fd,&end, 1);*/
             return count + 1;
         }
-        if(tmp == -1)
+        if (tmp == -1)
         {
             return -1;
         }
         count = count + 1;
-        
-
     }
 
-  
-
-return count;
-
+    return count;
 }
 
-int writeline( int fd, const char *str ) {
-  
-  /* Maximum number of loop iterations in case things go bad. */
-  const size_t MAXSTRLEN = 256;
+int writeline(int fd, const char *str)
+{
+
+    /* Maximum number of loop iterations in case things go bad. */
+    const size_t MAXSTRLEN = 256;
 
     int count = 0;
     int i;
     int tmp = 0;
     char end = '\n';
-    for (i = 0; i < MAXSTRLEN; i++) {
+    for (i = 0; i < MAXSTRLEN; i++)
+    {
 
-        char c = str[i]; 
+        char c = str[i];
 
-        if(c != '\0')
+        if (c != '\0')
         {
-            tmp = write(fd,&c, 1);
+            tmp = write(fd, &c, 1);
         }
-        else{
+        else
+        {
 
-            tmp = write(fd,&end, 1);
+            tmp = write(fd, &end, 1);
             return count + 1;
         }
-        if(tmp == -1)
+        if (tmp == -1)
         {
             return -1;
         }
         count = count + 1;
-        
-
     }
 
-  
-
-return count;
-
+    return count;
 }
 
 int readline(int fd, char *buf, int bufsz)
@@ -192,49 +189,51 @@ int readline(int fd, char *buf, int bufsz)
     return count;
 }
 
-
 /***********************************************************************************************************/
 
 int main(void)
 {
 
-
     char input[256];
     char tempString[1024];
-    char *path = getenv( "PATH" );
+    char *path = getenv("PATH");
     int bytes_read;
-    
-    /*char tp[1000];*/
-    
-    printf("%s", path);
-    char *delims = ";";
-            char *tokens[10];
-            int i;
-            char *token;
-            char jobs[10][256];
-            char ops[10][10];
-            delims = " ";
-            /*char *sma[10][10][10];*/
-            char *sm;
-            int c1;
-            int c2;
-            int temp = 0;
-            int c3;
-            char *cmd;
-            int argCount = 1;
-            char *argsOfSM[10];
-            argsOfSM[0] = "a";
-            char path2[90];
-            char * tp;
 
+    /*char tp[1000];*/
+
+    char *delims = ";";
+    char *tokens[10];
+    int i;
+    char *token;
+    char jobs[10][256];
+    char ops[10][10];
+
+    /*char *sma[10][10][10];*/
+    char *sm;
+    int c1;
+    int c2;
+    int temp = 0;
+    int c3;
+    char *cmd;
+    int argCount = 1;
+    char *argsOfSM[10];
+    argsOfSM[0] = "a";
+    char path2[90];
+    char *tp;
+    char *commands[10][10];
+    char *command;
+    int j;
+    int k;
+    int count[i + 1];
+    char simCom[10][10][256];
+    printf("%s", path);
     while (1)
     {
-        
+
         sprintf(tempString, ">> ");
 
-        writestring( 1, tempString);
+        writestring(1, tempString);
 
-        
         bytes_read = readline(0, &input[0], 256);
 
         if (bytes_read > 0)
@@ -242,38 +241,33 @@ int main(void)
 
             sprintf(tempString, "readline(): Got: \"%s\" (rval = %d)\n\n", input, bytes_read);
             /*writestring( 1, tempString);*/
-            
+
             for (i = 0, token = strtok(input, delims); token != NULL && i < 10;
                  token = strtok(NULL, delims), i++)
             {
 
                 tokens[i] = token;
                 strcpy(jobs[i], tokens[i]);
-                if(strchr(token,'&')&&strchr(token,'|'))
+                if (strchr(token, '&') && strchr(token, '|'))
                 {
                     strcpy(ops[i], "1 2");
                 }
-                else if(strchr(token,'&'))
+                else if (strchr(token, '&'))
                 {
                     strcpy(ops[i], "1");
                 }
-                else if(strchr(token,'|'))
+                else if (strchr(token, '|'))
                 {
                     strcpy(ops[i], "2");
                 }
-                else{
+                else
+                {
                     strcpy(ops[i], "");
                 }
             }
             /*tokens[i] = jobs*/
             delims = "&&||";
-            char *commands[10][10];
-            char *command;
-            int j;
-            int k;
 
-            int count[i+1];
-            char simCom[10][10][256];
             /*printf("jobs\n");*/
             for (k = 0; k < i; k++)
             {
@@ -287,17 +281,16 @@ int main(void)
                     strcpy(simCom[k][j], commands[k][j]);
                 }
             }
-            
-            strcpy(tp,path);
+
+            strcpy(tp, path);
 
             /*printf("debug\n");
 
             //printf("args\n");*/
-
+            delims = " ";
             for (c1 = 0; c1 < i; c1++)
             {
 
-                
                 sprintf(tempString, "Job #%d: \"%s\"\n", c1, jobs[c1]);
                 /*writestring( 1, tempString);*/
                 sprintf(tempString, "   seqops[] = [ %s ]\n", ops[c1]);
@@ -312,22 +305,23 @@ int main(void)
                     {
 
                         /*arguments*/
-                        if(c3 ==0)
+                        if (c3 == 0)
                         {
-                        cmd = sm;
-                        /*sprintf(tempString, "      cmd = \"%s\"\n", sm);
+                            cmd = sm;
+                            /*sprintf(tempString, "      cmd = \"%s\"\n", sm);
                         //writestring( 1, tempString);*/
                         }
-                        else{
+                        else
+                        {
                             argsOfSM[argCount] = sm;
                             argCount++;
-                            sprintf(tempString, "      arg[%d] = \"%s\"\n", c3-1, sm);
+                            sprintf(tempString, "      arg[%d] = \"%s\"\n", c3 - 1, sm);
                             /*writestring( 1, tempString);*/
                         }
                         /*sma[c1][c2][c3] = sm;
                         //printf("%s\n", sma[c1][c2][c3]);*/
                     }
-                    if(c3 ==1)
+                    if (c3 == 1)
                     {
                         sprintf(tempString, "      args = (None supplied)");
                         /*writestring( 1, tempString);*/
@@ -336,43 +330,36 @@ int main(void)
                     /*printf("debug1\n");
                     //printf("Sim Com 1 = %s\n", cmd);
                     //printf("path1 = %s", path1);*/
-                    int bool = findPath(tp,cmd, path1);
+                    int bool = findPath(tp, cmd, path1);
                     printf("debug");
-                    strcpy(tp,path);
+                    strcpy(tp, path);
                     /*printf("path = %s\n", path1);*/
                     if (bool == 0)
                     {
                         argsOfSM[argCount] = (char *)0;
                         forkFunc(path1, argsOfSM);
-                        
+
                         (path1, "\0");
                         /*printf("string = %s", path1);*/
-                        
                     }
                     else
                     {
-                        sprintf(tempString,"Command: %s not found", cmd);
-                        writestring( 1, tempString);
+                        sprintf(tempString, "Command: %s not found", cmd);
+                        writestring(1, tempString);
                     }
                     argCount = 1;
 
                     /*printf("\n///////////////////////////////////////////////////\n");
                     //sprintf(tempString, "\n\n");
                     //writestring( 1, tempString);*/
-                    
                 }
                 temp++;
-
             }
-
-
-
-
         }
         else
         {
             sprintf(tempString, "readline(): Returned with code = %d\n", bytes_read);
-            writestring( 1, tempString);
+            writestring(1, tempString);
         }
     }
 
