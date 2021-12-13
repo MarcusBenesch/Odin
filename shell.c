@@ -34,7 +34,7 @@ int forkFunc(const char *str, char *args[])
 
         char *env_args[] = {(char *)0};
         execve(str, args, env_args);
-        _exit(EXIT_FAILURE);
+        _exit(EXIT_FAILURE); 
     }
 }
 
@@ -64,10 +64,10 @@ int findPath(char *path, const char *str, char *buf)
                 strcat(temp, "/");
                 strcat(temp, str);
                 x = access(temp, X_OK);
-
+                
                 if (x == 0)
                 {
-
+                    
                     strcpy(buf, temp);
                     return 0;
                 }
@@ -86,7 +86,7 @@ int writestring(int fd, const char *str)
     int count = 0;
     int i;
     int tmp = 0;
-
+    
     for (i = 0; i < MAXSTRLEN; i++)
     {
 
@@ -99,6 +99,7 @@ int writestring(int fd, const char *str)
         else
         {
 
+            
             return count + 1;
         }
         if (tmp == -1)
@@ -195,35 +196,8 @@ int main(void)
     char input[256];
     char tempString[256];
     char *path = getenv("PATH");
-    int bytes_read;
-    char *delims = ";";
-    char *tokens[10];
-    int i;
-    char *token;
-    char jobs[10][256];
-    char ops[10][10];
-    char *commands[10][10];
-    char *command;
-    int j;
-    int k;
-    char *sm;
-    int c1;
-    int c2;
-    int temp = 0;
-    int c3;
-    char *cmd;
-    int argCount = 1;
-    char *argsOfSM[10];
-    argsOfSM[0] = "a";
-    char path2[90];
-    
-    char *tp;
-    /**test*/
 
-    int count[i + 1];
-    char simCom[10][10][256];
-
-    
+    char tp[1000];
 
     printf("%s", path);
 
@@ -234,6 +208,7 @@ int main(void)
 
         writestring(1, tempString);
 
+        int bytes_read;
         bytes_read = readline(0, &input[0], 256);
 
         if (bytes_read > 0)
@@ -241,7 +216,12 @@ int main(void)
 
             sprintf(tempString, "readline(): Got: \"%s\" (rval = %d)\n\n", input, bytes_read);
             /*writestring( 1, tempString);*/
-
+            char *delims = ";";
+            char *tokens[10];
+            int i;
+            char *token;
+            char jobs[10][256];
+            char ops[10][10];
             for (i = 0, token = strtok(input, delims); token != NULL && i < 10;
                  token = strtok(NULL, delims), i++)
             {
@@ -267,7 +247,13 @@ int main(void)
             }
             /*tokens[i] = jobs*/
             delims = "&&||";
+            char *commands[10][10];
+            char *command;
+            int j;
+            int k;
 
+            int count[i + 1];
+            char simCom[10][10][256];
             /*printf("jobs\n");*/
             for (k = 0; k < i; k++)
             {
@@ -283,7 +269,17 @@ int main(void)
             }
             delims = " ";
             /*char *sma[10][10][10];*/
-
+            char *sm;
+            int c1;
+            int c2;
+            int temp = 0;
+            int c3;
+            char *cmd;
+            int argCount = 1;
+            char *argsOfSM[10];
+            argsOfSM[0] = "a";
+            char path2[90];
+            char *tp;
             strcpy(tp, path);
 
             /*printf("debug\n");*/
@@ -293,6 +289,7 @@ int main(void)
             for (c1 = 0; c1 < i; c1++)
             {
 
+                
                 sprintf(tempString, "Job #%d: \"%s\"\n", c1, jobs[c1]);
                 /*writestring( 1, tempString);*/
                 sprintf(tempString, "   seqops[] = [ %s ]\n", ops[c1]);
@@ -341,6 +338,7 @@ int main(void)
                         argsOfSM[argCount] = (char *)0;
                         forkFunc(path1, argsOfSM);
 
+                        
                         /*printf("string = %s", path1);*/
                     }
                     else
