@@ -205,11 +205,11 @@ int main(void)
     
     char tp[1000];
     
-    
+    printf("%s", path);
 
     while (1)
     {
-        //printf("%s", path);
+        
         sprintf(tempString, ">> ");
 
         writestring( 1, tempString);
