@@ -216,13 +216,14 @@ int main(void)
     char *argsOfSM[10];
     argsOfSM[0] = "a";
     char path2[90];
+    char tp[1000];
     char *tp;
     /**test*/
 
     int count[i + 1];
     char simCom[10][10][256];
 
-    char tp[1000];
+    
 
     printf("%s", path);
 
