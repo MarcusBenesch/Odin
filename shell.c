@@ -207,6 +207,25 @@ int main(void)
     /*char tp[1000];*/
     
     printf("%s", path);
+    char *delims = ";";
+            char *tokens[10];
+            int i;
+            char *token;
+            char jobs[10][256];
+            char ops[10][10];
+            delims = " ";
+            /*char *sma[10][10][10];*/
+            char *sm;
+            int c1;
+            int c2;
+            int temp = 0;
+            int c3;
+            char *cmd;
+            int argCount = 1;
+            char *argsOfSM[10];
+            argsOfSM[0] = "a";
+            char path2[90];
+            char * tp;
 
     while (1)
     {
@@ -223,12 +242,7 @@ int main(void)
 
             sprintf(tempString, "readline(): Got: \"%s\" (rval = %d)\n\n", input, bytes_read);
             /*writestring( 1, tempString);*/
-            char *delims = ";";
-            char *tokens[10];
-            int i;
-            char *token;
-            char jobs[10][256];
-            char ops[10][10];
+            
             for (i = 0, token = strtok(input, delims); token != NULL && i < 10;
                  token = strtok(NULL, delims), i++)
             {
@@ -273,19 +287,7 @@ int main(void)
                     strcpy(simCom[k][j], commands[k][j]);
                 }
             }
-            delims = " ";
-            /*char *sma[10][10][10];*/
-            char *sm;
-            int c1;
-            int c2;
-            int temp = 0;
-            int c3;
-            char *cmd;
-            int argCount = 1;
-            char *argsOfSM[10];
-            argsOfSM[0] = "a";
-            char path2[90];
-            char * tp;
+            
             strcpy(tp,path);
 
             /*printf("debug\n");
