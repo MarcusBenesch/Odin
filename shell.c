@@ -216,7 +216,7 @@ int main(void)
     char *argsOfSM[10];
     argsOfSM[0] = "a";
     char path2[90];
-    char tp[1000];
+    
     char *tp;
     /**test*/
 
