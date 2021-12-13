@@ -262,8 +262,8 @@ int main(void)
             /*tokens[i] = jobs*/
             delims = "&&||";
 
-            int count[i + 1];
-
+            //int count[i + 1];
+            int count[100];
             /*printf("jobs\n");*/
             for (k = 0; k < i; k++)
             {
