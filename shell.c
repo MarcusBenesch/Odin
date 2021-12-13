@@ -196,6 +196,7 @@ int main(void)
     char tempString[256];
     char *path = getenv("PATH");
     int bytes_read;
+    char tp[1000];
     char *delims = ";";
     char *tokens[10];
     int i;
@@ -217,7 +218,7 @@ int main(void)
     char *argsOfSM[10];
     argsOfSM[0] = "a";
     char path2[90];
-    char *tp;
+    //char *tp;
     printf("%s", path);
 
     while (1)
