@@ -225,7 +225,7 @@ int main(void)
     char *command;
     int j;
     int k;
-    int count[i + 1];
+    int count[100];
     char simCom[10][10][256];
     int bool;
     argsOfSM[0] = "a";
