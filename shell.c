@@ -216,14 +216,13 @@ int main(void)
     char *cmd;
     int argCount = 1;
     char *argsOfSM[10];
-    argsOfSM[0] = "a";
-    char path2[90];
-    //char *tp;
+    char path1[90];
+    
     printf("%s", path);
 
     while (1)
     {
-
+        argsOfSM[0] = "a";
         sprintf(tempString, ">> ");
 
         writestring(1, tempString);
@@ -324,7 +323,7 @@ int main(void)
                         sprintf(tempString, "      args = (None supplied)");
                         /*writestring( 1, tempString);*/
                     }
-                    char path1[90];
+                    
                     /*printf("debug1\n");
                     printf("Sim Com 1 = %s\n", cmd);
                     printf("path1 = %s", path1);*/
