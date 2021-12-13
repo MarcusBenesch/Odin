@@ -219,6 +219,7 @@ int main(void)
     char *argsOfSM[10];
     char path1[90];
     int bool;
+    int count[100];
     printf("%s", path);
 
     while (1)
@@ -262,8 +263,8 @@ int main(void)
             /*tokens[i] = jobs*/
             delims = "&&||";
 
-            //int count[i + 1];
-            int count[100];
+            /*int count[i + 1];*/
+            
             /*printf("jobs\n");*/
             for (k = 0; k < i; k++)
             {
