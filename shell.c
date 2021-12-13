@@ -200,7 +200,7 @@ int main(void)
 
 
     char input[256];
-    char tempString[256];
+    char tempString[1024];
     char *path = getenv( "PATH" );
     
     char tp[1000];
