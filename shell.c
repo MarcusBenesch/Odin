@@ -16,25 +16,25 @@ int forkFunc(const char *str, char *args[])
 {
     pid_t parent = getpid();
     pid_t pid = fork();
-    //printf("test\n");
+    /*printf("test\n");*/
 
     if (pid == -1)
     {
-        // error, failed to fork()
-        //printf("Failed");
+        /* error, failed to fork()
+        //printf("Failed");*/
     }
     else if (pid > 0)
     {
         int status;
         waitpid(pid, &status, 0);
-        //printf("I am parent\n");
+        /*printf("I am parent\n");*/
     }
     else
     {
 
         char *env_args[] = {(char *)0};
         execve(str, args, env_args);
-        _exit(EXIT_FAILURE); // exec never returns
+        _exit(EXIT_FAILURE); 
     }
 }
 
@@ -64,10 +64,10 @@ int findPath(char *path, const char *str, char *buf)
                 strcat(temp, "/");
                 strcat(temp, str);
                 x = access(temp, X_OK);
-                //printf("%s\n", temp);
+                
                 if (x == 0)
                 {
-                    //printf("\n%s\n", temp);
+                    
                     strcpy(buf, temp);
                     return 0;
                 }
@@ -86,7 +86,7 @@ int writestring(int fd, const char *str)
     int count = 0;
     int i;
     int tmp = 0;
-    //char end = '\n';
+    
     for (i = 0; i < MAXSTRLEN; i++)
     {
 
@@ -99,7 +99,7 @@ int writestring(int fd, const char *str)
         else
         {
 
-            //tmp = write(fd,&end, 1);
+            
             return count + 1;
         }
         if (tmp == -1)
@@ -215,7 +215,7 @@ int main(void)
         {
 
             sprintf(tempString, "readline(): Got: \"%s\" (rval = %d)\n\n", input, bytes_read);
-            //writestring( 1, tempString);
+            /*writestring( 1, tempString);*/
             char *delims = ";";
             char *tokens[10];
             int i;
@@ -245,7 +245,7 @@ int main(void)
                     strcpy(ops[i], "");
                 }
             }
-            ///tokens[i] = jobs
+            /*tokens[i] = jobs*/
             delims = "&&||";
             char *commands[10][10];
             char *command;
@@ -254,7 +254,7 @@ int main(void)
 
             int count[i + 1];
             char simCom[10][10][256];
-            //printf("jobs\n");
+            /*printf("jobs\n");*/
             for (k = 0; k < i; k++)
             {
                 count[k] = 0;
@@ -263,12 +263,12 @@ int main(void)
                 {
                     count[k] = j;
                     commands[k][j] = command;
-                    //printf("%s\n", commands[k][j]);
+                    /*printf("%s\n", commands[k][j]);*/
                     strcpy(simCom[k][j], commands[k][j]);
                 }
             }
             delims = " ";
-            //char *sma[10][10][10];
+            /*char *sma[10][10][10];*/
             char *sm;
             int c1;
             int c2;
@@ -282,64 +282,64 @@ int main(void)
             char *tp;
             strcpy(tp, path);
 
-            //printf("debug\n");
+            /*printf("debug\n");*/
 
-            //printf("args\n");
+            /*printf("args\n");*/
 
             for (c1 = 0; c1 < i; c1++)
             {
 
-                ///jobs
+                
                 sprintf(tempString, "Job #%d: \"%s\"\n", c1, jobs[c1]);
-                //writestring( 1, tempString);
+                /*writestring( 1, tempString);*/
                 sprintf(tempString, "   seqops[] = [ %s ]\n", ops[c1]);
-                //writestring( 1, tempString);
+                /*writestring( 1, tempString);*/
                 for (c2 = 0; c2 <= count[temp]; c2++)
                 {
-                    //simple commands
+                    /*simple commands*/
                     sprintf(tempString, "   Simple Command #%d = \"%s\"\n", c2, simCom[c1][c2]);
-                    //writestring( 1, tempString);
+                    /*writestring( 1, tempString);*/
                     for (c3 = 0, sm = strtok(commands[c1][c2], delims); sm != NULL && c3 < 10;
                          sm = strtok(NULL, delims), c3++)
                     {
 
-                        //arguments
+                        /*arguments*/
                         if (c3 == 0)
                         {
                             cmd = sm;
-                            //sprintf(tempString, "      cmd = \"%s\"\n", sm);
-                            //writestring( 1, tempString);
+                            /*sprintf(tempString, "      cmd = \"%s\"\n", sm);
+                            writestring( 1, tempString);*/
                         }
                         else
                         {
                             argsOfSM[argCount] = sm;
                             argCount++;
                             sprintf(tempString, "      arg[%d] = \"%s\"\n", c3 - 1, sm);
-                            //writestring( 1, tempString);
+                            /*writestring( 1, tempString);*/
                         }
-                        //sma[c1][c2][c3] = sm;
-                        //printf("%s\n", sma[c1][c2][c3]);
+                        /*ma[c1][c2][c3] = sm;
+                        printf("%s\n", sma[c1][c2][c3]);*/
                     }
                     if (c3 == 1)
                     {
                         sprintf(tempString, "      args = (None supplied)");
-                        //writestring( 1, tempString);
+                        /*writestring( 1, tempString);*/
                     }
                     char path1[90];
-                    //printf("debug1\n");
-                    //printf("Sim Com 1 = %s\n", cmd);
-                    //printf("path1 = %s", path1);
+                    /*printf("debug1\n");
+                    printf("Sim Com 1 = %s\n", cmd);
+                    printf("path1 = %s", path1);*/
                     int bool = findPath(tp, cmd, path1);
                     printf("debug");
                     strcpy(tp, path);
-                    //printf("path = %s\n", path1);
+                    /*printf("path = %s\n", path1);*/
                     if (bool == 0)
                     {
                         argsOfSM[argCount] = (char *)0;
                         forkFunc(path1, argsOfSM);
 
                         
-                        //printf("string = %s", path1);
+                        /*printf("string = %s", path1);*/
                     }
                     else
                     {
@@ -348,9 +348,9 @@ int main(void)
                     }
                     argCount = 1;
 
-                    //printf("\n///////////////////////////////////////////////////\n");
-                    //sprintf(tempString, "\n\n");
-                    //writestring( 1, tempString);
+                    /*printf("\n///////////////////////////////////////////////////\n");
+                    sprintf(tempString, "\n\n");
+                    writestring( 1, tempString);*/
                 }
                 temp++;
             }
