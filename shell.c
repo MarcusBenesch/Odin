@@ -201,10 +201,10 @@ int main(void)
 
     char input[256];
     char tempString[256];
-    char path[1000];
-    char tempString[256];
+    char path[1000] = getenv( "PATH" );;
+    
     char tp[1000];
-    path = getenv( "PATH" );
+    
     
 
     while (1)
