@@ -220,7 +220,7 @@ int main(void)
     char *argsOfSM[10];
     char path1[90];
     /*char path2[90];*/
-    char *tp;
+    char *tp = "a";
     char *commands[10][10];
     char *command;
     int j;
