@@ -227,7 +227,9 @@ int main(void)
     int k;
     int count[i + 1];
     char simCom[10][10][256];
+    int bool;
     argsOfSM[0] = "a";
+    
     printf("%s", path);
     while (1)
     {
@@ -332,7 +334,7 @@ int main(void)
                     /*printf("debug1\n");
                     //printf("Sim Com 1 = %s\n", cmd);
                     //printf("path1 = %s", path1);*/
-                    int bool = findPath(tp, cmd, path1);
+                    bool = findPath(tp, cmd, path1);
                     printf("debug");
                     strcpy(tp, path);
                     /*printf("path = %s\n", path1);*/
@@ -342,7 +344,7 @@ int main(void)
                         forkFunc(path1, argsOfSM);
 
                         /*(path1, "\0");
-                        /*printf("string = %s", path1);*/
+                        printf("string = %s", path1);*/
                     }
                     else
                     {
