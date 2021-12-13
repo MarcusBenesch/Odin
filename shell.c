@@ -14,7 +14,7 @@
 /*#include"csci4500utils.h"*/
 int forkFunc(const char *str, char *args[])
 {
-    pid_t parent = getpid();
+    /*pid_t parent = getpid();*/
     pid_t pid = fork();
     /*printf("test\n");*/
 
@@ -45,11 +45,11 @@ int findPath(char *path, const char *str, char *buf)
     char *delim = ":";
     int count = 0;
     int x;
+    char temp[1000];
 
     if (path != NULL)
     {
         x = access(str, X_OK);
-        char temp[1000];
         if (x == 0)
         {
             strcpy(buf, str);
