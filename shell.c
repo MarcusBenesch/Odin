@@ -203,6 +203,13 @@ int main(void)
     char *token;
     char jobs[10][256];
     char ops[10][10];
+    char *commands[10][10];
+    char *command;
+    int j;
+    int k;
+
+    int count[i + 1];
+    char simCom[10][10][256];
 
     printf("%s", path);
 
@@ -246,13 +253,7 @@ int main(void)
             }
             /*tokens[i] = jobs*/
             delims = "&&||";
-            char *commands[10][10];
-            char *command;
-            int j;
-            int k;
 
-            int count[i + 1];
-            char simCom[10][10][256];
             /*printf("jobs\n");*/
             for (k = 0; k < i; k++)
             {
