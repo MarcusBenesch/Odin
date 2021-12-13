@@ -331,7 +331,7 @@ int main(void)
                     }
                     char path1[90];
                     //printf("debug1\n");
-                    printf("Sim Com 1 = %s\n", cmd);
+                    //printf("Sim Com 1 = %s\n", cmd);
                     //printf("path1 = %s", path1);
                     int bool = findPath(tp,cmd, path1);
                     strcpy(tp,path);
