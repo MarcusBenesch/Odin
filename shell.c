@@ -36,6 +36,7 @@ int forkFunc(const char *str, char *args[])
         execve(str, args, env_args);
         _exit(EXIT_FAILURE);
     }
+    return 0;
 }
 
 int findPath(char *path, const char *str, char *buf)
@@ -193,7 +194,7 @@ int main(void)
 {
 
     char input[256];
-    char tempString[256];
+    char tempString[1024];
     char *path = getenv("PATH");
     int bytes_read;
     char tp[1000];
