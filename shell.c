@@ -36,6 +36,7 @@ int forkFunc(const char *str, char *args[])
         execve(str, args, env_args);
         _exit(EXIT_FAILURE);
     }
+    return 0;
 }
 
 int findPath(char *path, const char *str, char *buf)
@@ -217,8 +218,8 @@ int main(void)
     char *cmd;
     int argCount = 1;
     char *argsOfSM[10];
-    argsOfSM[0] = "a";
-    char path2[90];
+    char path1[90];
+    /*char path2[90];*/
     char *tp;
     char *commands[10][10];
     char *command;
@@ -226,6 +227,7 @@ int main(void)
     int k;
     int count[i + 1];
     char simCom[10][10][256];
+    argsOfSM[0] = "a";
     printf("%s", path);
     while (1)
     {
@@ -326,7 +328,7 @@ int main(void)
                         sprintf(tempString, "      args = (None supplied)");
                         /*writestring( 1, tempString);*/
                     }
-                    char path1[90];
+                    
                     /*printf("debug1\n");
                     //printf("Sim Com 1 = %s\n", cmd);
                     //printf("path1 = %s", path1);*/
@@ -339,7 +341,7 @@ int main(void)
                         argsOfSM[argCount] = (char *)0;
                         forkFunc(path1, argsOfSM);
 
-                        (path1, "\0");
+                        /*(path1, "\0");
                         /*printf("string = %s", path1);*/
                     }
                     else
