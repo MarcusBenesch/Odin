@@ -14,14 +14,14 @@
 /*#include"csci4500utils.h"*/
 int forkFunc( const char *str, char *args[])
 {
-    pid_t parent = getpid();
+    //pid_t parent = getpid();
     pid_t pid = fork();
     //printf("test\n");
 
     if (pid == -1)
     {
         // error, failed to fork()
-        //printf("Failed");
+        /*printf("Failed");*/
     }
     else if (pid > 0)
     {
@@ -203,7 +203,7 @@ int main(void)
     char tempString[1024];
     char *path = getenv( "PATH" );
     
-    char tp[1000];
+    //char tp[1000];
     
     printf("%s", path);
 
