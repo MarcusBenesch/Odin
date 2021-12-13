@@ -341,6 +341,7 @@ int main(void)
                     {
                         argsOfSM[argCount] = (char *)0;
                         forkFunc(path1, argsOfSM);
+                        
                         (path1, "\0");
                         //printf("string = %s", path1);
                         
@@ -350,7 +351,7 @@ int main(void)
                         sprintf(tempString,"Command: %s not found", cmd);
                         writestring( 1, tempString);
                     }
-
+                    argsOfSM = 1;
 
                     //printf("\n///////////////////////////////////////////////////\n");
                     //sprintf(tempString, "\n\n");
