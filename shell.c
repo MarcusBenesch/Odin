@@ -204,10 +204,21 @@ int main(void)
     char jobs[10][256];
     char ops[10][10];
     char *commands[10][10];
-            char *command;
-            int j;
-            int k;
+    char *command;
+    int j;
+    int k;
     char simCom[10][10][256];
+    char *sm;
+    int c1;
+    int c2;
+    int temp = 0;
+    int c3;
+    char *cmd;
+    int argCount = 1;
+    char *argsOfSM[10];
+    argsOfSM[0] = "a";
+    char path2[90];
+    char *tp;
     printf("%s", path);
 
     while (1)
@@ -250,10 +261,9 @@ int main(void)
             }
             /*tokens[i] = jobs*/
             delims = "&&||";
-            
 
             int count[i + 1];
-            
+
             /*printf("jobs\n");*/
             for (k = 0; k < i; k++)
             {
@@ -269,17 +279,7 @@ int main(void)
             }
             delims = " ";
             /*char *sma[10][10][10];*/
-            char *sm;
-            int c1;
-            int c2;
-            int temp = 0;
-            int c3;
-            char *cmd;
-            int argCount = 1;
-            char *argsOfSM[10];
-            argsOfSM[0] = "a";
-            char path2[90];
-            char *tp;
+
             strcpy(tp, path);
 
             /*printf("debug\n");*/
