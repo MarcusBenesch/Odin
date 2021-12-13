@@ -217,7 +217,7 @@ int main(void)
     int argCount = 1;
     char *argsOfSM[10];
     char path1[90];
-    
+    int bool;
     printf("%s", path);
 
     while (1)
@@ -327,7 +327,7 @@ int main(void)
                     /*printf("debug1\n");
                     printf("Sim Com 1 = %s\n", cmd);
                     printf("path1 = %s", path1);*/
-                    int bool = findPath(tp, cmd, path1);
+                    bool = findPath(tp, cmd, path1);
                     printf("debug");
                     strcpy(tp, path);
                     /*printf("path = %s\n", path1);*/
